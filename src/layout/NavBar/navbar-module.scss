@@ -1,0 +1,187 @@
+@use "../../style/scss/global/colors" as colors;
+// @use "../../style/scss/utils/functions" as fn;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  // background-color: red;
+  width: 100%;
+}
+
+.Navbar-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 15%;
+}
+
+.Navbar-logo {
+  width: 5rem;
+  height: 5rem;
+  margin-top: 1rem;
+}
+
+.Navbar-text {
+  color: colors.$primary;
+}
+
+.Navbar-text h1 {
+  font-weight: 700;
+  font-size: 3.2;
+  line-height: 3.8rem;
+}
+
+.Navbar-text p {
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.3rem;
+}
+
+.Navbar-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0 auto;
+  // width: 85%;
+}
+
+.Navbar-menu li {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.3rem;
+
+  margin: 0 2rem;
+}
+
+// .Navbar-auth {
+  // translate: 14rem 0;
+// }
+
+.Navbar-auth button {
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+
+  width: 130px;
+  height: 50px;
+  background: linear-gradient(123.09deg, #2f98c2 -7.49%, #1e3673 78.8%);
+  border-radius: 15px;
+  border: none;
+  color: colors.$white;
+}
+
+.nav_item.active {
+  color: red;
+}
+
+.Navbar-auth button:hover {
+  background: linear-gradient(123.09deg, #0a5370 -7.49%, #051233 78.8%);
+}
+
+.Navbar-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+// @media (max-width: 768px) {
+  // .Navbar {
+    // flex-direction: column;
+    // align-items: flex-start;
+    // position: relative;
+  //   padding: 1rem 2rem;
+  // }
+
+  // .Navbar-logo {
+  //   width: 2.884rem;
+  //   height: 2.884rem;
+  // }
+
+  // .Navbar-content {
+  //   translate: -3rem 0;
+  // }
+
+  // .Navbar-text h1 {
+  //   font-size: 1.84564rem;
+  //   line-height: 2.2rem;
+  // }
+
+  // .Navbar-text p {
+  //   font-size: 1.15353rem;
+  //   line-height: 1.4rem;
+  //   text-align: center;
+  // }
+
+  // .Navbar-toggle {
+  //   display: block;
+  //   position: absolute;
+  //   right: 3rem;
+  //   top: 1.8rem;
+  // }
+
+  // .Navbar-menu {
+  //   display: none;
+  //   flex-direction: column;
+  //   width: 100%;
+  //   text-align: center;
+  //   margin-top: 1rem;
+  // }
+
+  // .Navbar-menu.open {
+  //   display: flex;
+  // }
+
+  // .Navbar-menu li {
+  //   margin: 1rem 0;
+  // }
+
+  // .Navbar-auth {
+  //   translate: 0;
+   
+// }

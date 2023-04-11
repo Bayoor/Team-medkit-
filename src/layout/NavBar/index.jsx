@@ -1,176 +1,70 @@
-// REACT DEFAULTS
-import { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "../NavBar/navbar-module.scss";
+import { FaTimes, FaBars } from "react-icons/fa";
+import logo from "../../assets/icons/logo.svg";
+// import { GiHamburgerMenu } from "react-icons/gi";
+// import { MdOutlineClose } from "react-icons/md";
 
-// COMPONENTS
-// import Container from '../Container'
-import { VscMenu, VscClose } from 'react-icons/vsc'
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState('')
 
-// STYLES
-import styles from './NavBar.module.scss'
-// import LinkButton from '../../components/buttons/link-button/LinkButton'
-import { Text } from '@chakra-ui/react'
-
-const NavBar = ({ children, transparentBg }) => {
-  const [isNavOpen, setIsNavOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [windowPosition, setWindowPosition] = useState(0)
-  const location = useLocation()
-  const routePath = useLocation()
-
-  // verifies if routeName is the one active (in browser input)
-  const activeRoute = (routeName) => {
-    return location.pathname.includes(routeName)
-  }
-
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen)
-  }
-
-  const handleCloseNavBar = () => {
-    setIsNavOpen(false)
-  }
-
-  useEffect(() => {
-    if (isNavOpen) {
-      window.document.body.style.overflowY = 'hidden'
-    } else {
-      window.document.body.style.overflowY = 'scroll'
-    }
-  }, [isNavOpen, windowPosition])
-
-  useEffect(() => {
-    window.onscroll = () => {
-      setWindowPosition(window.scrollY)
-      // console.log('SCROLLEDEVENT')
-    }
-
-    if (windowPosition >= 16) {
-      setIsScrolled(true)
-      // console.log('SCROLLED')
-    } else {
-      setIsScrolled(false)
-    }
-  }, [windowPosition])
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    })
-  }
-
-  useEffect(() => {
-    scrollToTop()
-  }, [routePath])
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <nav
-      className={`${styles.navBar} ${`nav_alignment`} ${
-        isScrolled && styles.invertNavBar
-      } ${transparentBg ? styles.transparentBg : styles.defaultBg} `}
-    >
-      {/* <Container paddingBlock={'0'}> */}
-        <div className={styles.navContent}>
-          <div className={styles.navBrand}>
-            <Link to={'/'}>
-              <img
-                className={styles.navLogo}
-                src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1680856120/project-yemsays/Group_87_qudnxl.png`}
-                alt='logo'
-              />
-            </Link>
-
-            <button className={styles.hamburger} onClick={toggleNav}>
-              {isNavOpen ? <VscClose /> : <VscMenu />}
-            </button>
-          </div>
-
-          {
-            <div
-              className={`${styles.navLinks} ${
-                isNavOpen ? styles.navOpen : styles.navClose
-              }`}
-            >
-              <div className={styles.navItems}>
-                <Link
-                  className={styles.navLink}
-                  to={'/'}
-                  onClick={handleCloseNavBar}
-                  color={activeRoute(`/`) ? `primary` : `white`}
-                >
-                  <Text>Home</Text>
-                </Link>
-                <Link
-                  className={styles.navLink}
-                  to='/about-us'
-                  onClick={handleCloseNavBar}
-                >
-                  <Text color={activeRoute(`about-us`) ? `primary` : `white`}>
-                    About Us
-                  </Text>
-                </Link>
-                <Link
-                  className={styles.navLink}
-                  to='/properties'
-                  onClick={handleCloseNavBar}
-                  color={`red`}
-                >
-                  <Text
-                    color={activeRoute(`/properties`) ? `primary` : `white`}
-                  >
-                    Properties
-                  </Text>
-                </Link>
-                <Link
-                  className={styles.navLink}
-                  to='/contact'
-                  onClick={handleCloseNavBar}
-                >
-                  <Text color={activeRoute(`/contact`) ? `primary` : `white`}>
-                    Contact
-                  </Text>
-                </Link>
-                {/* <LinkButton
-                  text={`Book now`}
-                  width={`113px`}
-                  height={`40px`}
-                  to={`/book-now`}
-                /> */}
-                {children}
-              </div>
-
-              {/* <div className={styles.navItems}>
-                <Button
-                  onClick={handleCloseNavBar}
-                  linkHref={'/login'}
-                  navBtn={true}
-                  solidBtn={false}
-                  linkText={'LOGIN'}
-                />
-
-                <Button
-                  onClick={handleCloseNavBar}
-                  linkHref={'/signup'}
-                  navBtn={true}
-                  solidBtn={true}
-                  linkText={'SIGN UP'}
-                />
-                {children}
-              </div> */}
-            </div>
-          }
+    <nav className="Navbar container">
+      <div className="Navbar-content">
+        <img className="Navbar-logo" src={logo} alt="Logo" />
+        <div className="Navbar-text">
+          <h1>MEDKIT.COM</h1>
+          <p>Health is wealth</p>
         </div>
-      {/* </Container> */}
+      </div>
+
+      <ul className={isOpen ? "Navbar-menu open" : "Navbar-menu"}>
+        <li>
+          <Link onClick={()=>{
+            setActiveItem('home')
+          }} className={activeItem === 'home' ? ' nav_item active' : ' nav_item'} to={`/`}>HOME</Link>
+        </li>
+        <li>
+          <Link onClick={()=>{
+            setActiveItem('about')
+          }} className={activeItem === 'about' ? 'active nav_item' : 'nav_item'} to={`/about`}>ABOUT</Link>
+        </li>
+        <li>
+          <Link onClick={()=>{
+            setActiveItem('services')
+          }} className={activeItem === 'services' ? 'active nav_item' : 'nav_item'} to={`/services`}>SERVICES</Link>
+        </li>
+        <li>
+          <Link onClick={()=>{
+            setActiveItem('contact')
+          }} className={activeItem === 'contact' ? 'active nav_item' : 'nav_item'} to={`/contact`}>CONTACT</Link>
+        </li>
+        <li className="Navbar-auth">
+          <Link onClick={()=>{
+            setActiveItem('log in')
+          }} className={activeItem === 'log in' ? 'active nav_item' : 'nav_item'} to={`/login`}>Log In</Link>
+        </li>
+        <li className="Navbar-auth">
+          <Link onClick={()=>{
+            setActiveItem('sign up')
+          }} className={activeItem === 'sign up' ? 'active nav_item' : 'nav_item'} to={`/signup`}>
+            <button>Sign Up</button>
+          </Link>
+        </li>
+      </ul>
+
+      <button className="Navbar-toggle" onClick={toggleNavbar}>
+        {isOpen ? <FaTimes size={24} color={`#2f98c2`} /> : <FaBars size={24} color={`#2f98c2`} />}
+      </button>
     </nav>
-  )
-}
+  );
+};
 
-NavBar.propTypes = {
-  children: PropTypes.node,
-  transparentBg: PropTypes.bool,
-}
+export default Navbar;
 
-export default NavBar

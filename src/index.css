@@ -1,0 +1,38 @@
+:root {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+
+
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+
+}
+
+body {
+    font-size: 1.6rem;
+    
+}
+
+
+
+.section__padding {
+    padding: 1rem 6rem;
+}
+
+li, button {
+    cursor: pointer;
+}
+
+
+.container {
+    margin: 0 auto; 
+    max-width: 1440px;
+    width: 100%;
+}
