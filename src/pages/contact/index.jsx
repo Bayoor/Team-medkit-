@@ -16,6 +16,7 @@ import phone_icon from "../../assets/icons/phone_icon.svg";
 import email from "../../assets/icons/email.svg";
 import time from "../../assets/icons/time.svg";
 import map from "../../assets/images/map.png";
+import contact_bg from "../../assets/images/contact_bg.png";
 
 const ContactUs = () => {
   return (
@@ -25,7 +26,12 @@ const ContactUs = () => {
           display={`flex`}
           justifyContent={`center`}
           alignItems={`center`}
-          padding={`4rem 0`}
+          padding={[`4rem 3rem`,`8rem 0`]}
+          bgImage={contact_bg}
+          bgSize={[ `cover`]}
+          bgRepeat={`no-repeat`}
+         
+          // mt={`6rem`}
         >
           <Heading
             fontSize={[`2rem`, `3.2rem`]}
@@ -266,6 +272,7 @@ const ContactUs = () => {
               postion={`relative`}
               top={[`-2rem`, `-3rem`]}
               _hover={{ bg: `#2f98c2` }}
+              zIndex={1}
             >
               Send Message
             </Button>
@@ -333,6 +340,7 @@ const ContactUs = () => {
               position={`relative`}
               right={[`1rem`, `3rem`]}
               _hover={{ bg: `#1e3673` }}
+              // zIndex={-1}
             >
               Subscribe
             </Button>

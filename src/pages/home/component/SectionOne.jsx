@@ -2,6 +2,7 @@
 import React from "react";
 import "../scss/SectionOne-module.scss";
 import Doc from "../../../assets/images/doc2.png";
+import { Link } from "react-router-dom";
 
 const SectionOne = () => {
   return (
@@ -25,7 +26,7 @@ const SectionOne = () => {
           <div className="hero-service">
             <h2>Dr. Raj Spencer</h2>
             <span>Consultant</span>
-            <button>Book Appointment</button>
+            <button><Link to={`/appointment`}>Book Appointment</Link></button>
           </div>
         </div>
       </div>

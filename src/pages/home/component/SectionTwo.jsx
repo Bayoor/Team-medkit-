@@ -1,6 +1,7 @@
 import React from "react";
 import "../scss/SectionTwo-module.scss";
 import Vaccine from "../../../assets/images/vaccine.png";
+import { Link } from "react-router-dom";
 
 const SectionTwo = () => {
   return (
@@ -30,7 +31,7 @@ const SectionTwo = () => {
             felis tincidunt. Aenean enim sed pellentesque arcu. Lorem posuere
             elit est in interdum tempus.
           </p>
-          <button>Register Now</button>
+          <button><Link to={`/login`}>Register Now</Link></button>
         </div>
       </div>
     </section>

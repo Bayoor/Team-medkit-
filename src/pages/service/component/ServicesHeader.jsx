@@ -8,6 +8,7 @@ import gynecology from "../../../assets/images/gynecology.png";
 import paediatrics from "../../../assets/images/paediatrics.png";
 import optometry from "../../../assets/images/optometry.png";
 import physician from "../../../assets/images/physician.png";
+import service_bg from "../../../assets/images/service_bg.png";
 
 const ServicesHeader = () => {
   return (
@@ -16,13 +17,15 @@ const ServicesHeader = () => {
       //   outline={`1px solid red`}
       bgColor={`#DEF1F9`}
       padding={[`1rem 3rem`, `1rem 6rem`]}
+      bgImage={service_bg}
+      bgRepeat={`no-repeat`}
     >
       <Box
         display={`flex`}
         flexDir={`column`}
         justifyContent={[`center`]}
         alignItems={[`center`]}
-        padding={`2rem 0`}
+        padding={`8rem 0`}
         // outline={`1px solid blue`}
         // padding={`3rem 38rem`}
         w={[`100%`, `40%`]}
@@ -73,11 +76,10 @@ const ServicesHeader = () => {
               fontWeight={[500, 600]}
               lineHeight={[`1.61rem`, `2.684rem`]}
             >
-              Lorem ipsum dolor sit amet consectetur. Ullamcorper sodales
-              <br /> ut netus dictum tellus nunc ullamcorper quisque. Lectus in
-              <br /> nisl viverra nisl faucibus. Id pharetra nisl a amet leo non
-              <br /> mollis. Phasellus lectus ut suspendisse tortor eget sit
-              senectus.
+              Lorem ipsum dolor sit amet consectetur. Ullamcorper sodales ut
+              netus dictum tellus nunc ullamcorper quisque. Lectus in nisl
+              viverra nisl faucibus. Id pharetra nisl a amet leo non mollis.
+              Phasellus lectus ut suspendisse tortor eget sit senectus.
             </Text>
             <Button
               fontSize={[`1.2rem`, `2rem`]}
@@ -130,11 +132,10 @@ const ServicesHeader = () => {
               fontWeight={[500, 600]}
               lineHeight={[`1.61rem`, `2.684rem`]}
             >
-              Lorem ipsum dolor sit amet consectetur. Ullamcorper sodales
-              <br /> ut netus dictum tellus nunc ullamcorper quisque. Lectus in
-              <br /> nisl viverra nisl faucibus. Id pharetra nisl a amet leo non
-              <br /> mollis. Phasellus lectus ut suspendisse tortor eget sit
-              senectus.
+              Lorem ipsum dolor sit amet consectetur. Ullamcorper sodales ut
+              netus dictum tellus nunc ullamcorper quisque. Lectus in nisl
+              viverra nisl faucibus. Id pharetra nisl a amet leo non mollis.
+              Phasellus lectus ut suspendisse tortor eget sit senectus.
             </Text>
             <Button
               fontSize={[`1.2rem`, `2rem`]}
@@ -167,11 +168,10 @@ const ServicesHeader = () => {
               fontWeight={[500, 600]}
               lineHeight={[`1.61rem`, `2.684rem`]}
             >
-              Lorem ipsum dolor sit amet consectetur. Ullamcorper sodales
-              <br /> ut netus dictum tellus nunc ullamcorper quisque. Lectus in
-              <br /> nisl viverra nisl faucibus. Id pharetra nisl a amet leo non
-              <br /> mollis. Phasellus lectus ut suspendisse tortor eget sit
-              senectus.
+              Lorem ipsum dolor sit amet consectetur. Ullamcorper sodales ut
+              netus dictum tellus nunc ullamcorper quisque. Lectus in nisl
+              viverra nisl faucibus. Id pharetra nisl a amet leo non mollis.
+              Phasellus lectus ut suspendisse tortor eget sit senectus.
             </Text>
             <Button
               fontSize={[`1.2rem`, `2rem`]}
@@ -224,11 +224,10 @@ const ServicesHeader = () => {
               fontWeight={[500, 600]}
               lineHeight={[`1.61rem`, `2.684rem`]}
             >
-              Lorem ipsum dolor sit amet consectetur. Ullamcorper sodales
-              <br /> ut netus dictum tellus nunc ullamcorper quisque. Lectus in
-              <br /> nisl viverra nisl faucibus. Id pharetra nisl a amet leo non
-              <br /> mollis. Phasellus lectus ut suspendisse tortor eget sit
-              senectus.
+              Lorem ipsum dolor sit amet consectetur. Ullamcorper sodales ut
+              netus dictum tellus nunc ullamcorper quisque. Lectus in nisl
+              viverra nisl faucibus. Id pharetra nisl a amet leo non mollis.
+              Phasellus lectus ut suspendisse tortor eget sit senectus.
             </Text>
             <Button
               fontSize={[`1.2rem`, `2rem`]}
@@ -261,11 +260,10 @@ const ServicesHeader = () => {
               fontWeight={[500, 600]}
               lineHeight={[`1.61rem`, `2.684rem`]}
             >
-              Lorem ipsum dolor sit amet consectetur. Ullamcorper sodales
-              <br /> ut netus dictum tellus nunc ullamcorper quisque. Lectus in
-              <br /> nisl viverra nisl faucibus. Id pharetra nisl a amet leo non
-              <br /> mollis. Phasellus lectus ut suspendisse tortor eget sit
-              senectus.
+              Lorem ipsum dolor sit amet consectetur. Ullamcorper sodales ut
+              netus dictum tellus nunc ullamcorper quisque. Lectus in nisl
+              viverra nisl faucibus. Id pharetra nisl a amet leo non mollis.
+              Phasellus lectus ut suspendisse tortor eget sit senectus.
             </Text>
             <Button
               fontSize={[`1.2rem`, `2rem`]}
@@ -319,11 +317,10 @@ const ServicesHeader = () => {
               fontWeight={[500, 600]}
               lineHeight={[`1.61rem`, `2.684rem`]}
             >
-              Lorem ipsum dolor sit amet consectetur. Ullamcorper sodales
-              <br /> ut netus dictum tellus nunc ullamcorper quisque. Lectus in
-              <br /> nisl viverra nisl faucibus. Id pharetra nisl a amet leo non
-              <br /> mollis. Phasellus lectus ut suspendisse tortor eget sit
-              senectus.
+              Lorem ipsum dolor sit amet consectetur. Ullamcorper sodales ut
+              netus dictum tellus nunc ullamcorper quisque. Lectus in nisl
+              viverra nisl faucibus. Id pharetra nisl a amet leo non mollis.
+              Phasellus lectus ut suspendisse tortor eget sit senectus.
             </Text>
             <Button
               fontSize={[`1.2rem`, `2rem`]}

@@ -9,6 +9,7 @@ import Facebook from "../../assets/icons/facebook.svg";
 import Instagram from "../../assets/icons/instagram.svg";
 import logo from "../../assets/icons/logo.svg";
 import "./footer-module.scss";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -48,13 +49,13 @@ const Footer = () => {
 
       <div className="footer__content">
         <h2>Quick Links</h2>
-        <p>Book an Appointment</p>
+        <p><Link to={`/appointment`}>Book an Appointment</Link></p>
         <p>Free Consultation</p>
       </div>
 
       <div className="footer__content">
         <h2>Company</h2>
-        <p>About Us</p>
+        <p><Link to={`/about`}>About Us</Link></p>
         <p>Help Center</p>
         <p>Privacy Policy</p>
       </div>

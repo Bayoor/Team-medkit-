@@ -87,9 +87,17 @@ const Navbar = () => {
         </div>
       </ul>
 
-      <button className="Navbar-toggle" onClick={toggleNavbar}>
+      <button
+        className="Navbar-toggle"
+        onFocus={() => {
+          setIsOpen(true);
+        }}
+        onBlur={() => {
+          setIsOpen(false);
+        }}
+      >
         {isOpen ? (
-          <FaTimes size={24} color={`#2f98c2`} />
+          null
         ) : (
           <FaBars size={24} color={`#2f98c2`} />
         )}
