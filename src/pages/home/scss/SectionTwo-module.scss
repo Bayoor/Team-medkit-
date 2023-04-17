@@ -1,7 +1,7 @@
 @use "../../../style/scss/global/colors" as colors;
 
 .sectionTwo {
-  background-color: #f6f6f6;
+  background-color: #beecff;
 }
 
 .sectionTwo-content {
@@ -9,6 +9,7 @@
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
+  gap: 8rem;
 }
 
 .sectionTwo-content-image {
@@ -22,7 +23,7 @@
 }
 
 .sectionTwo-content-text {
-  width: 50%;
+  width: 60%;
 }
 
 .sectionTwo-content-text h2 {
@@ -49,6 +50,7 @@
   padding: 1.5rem 2.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-bottom: 3rem;
 }
 
 .sectionTwo-content-text button:hover {
@@ -69,6 +71,22 @@
 
   .sectionTwo-content-image img {
     margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sectionTwo {
+    padding: 1rem 3rem;
+  }
+
+  .sectionTwo-content-text h2 {
+    font-size: 2rem;
+    line-height: 136.69%;
+  }
+
+  .sectionTwo-content-text p {
+    font-size: 1.2rem;
+    line-height: 134.19%;
   }
 }
 

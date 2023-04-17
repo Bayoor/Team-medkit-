@@ -1,4 +1,143 @@
-// @use "../../style/scss/global/colors" as colors;
+@use "../../style/scss/global/colors" as colors;
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: inherit;
+  background-color: colors.$secondary;
+  color: colors.$white;
+  padding: 6rem 6rem;
+}
+
+.footer__content-item {
+  display: flex;
+  align-items: center;
+}
+
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: colors.$primary;
+  padding-bottom: 3rem;
+}
+
+.footer-text h2 {
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 3.8rem;
+}
+
+.footer-text p {
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  text-align: center;
+}
+
+.footer__content-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__icons {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer__content-text p,
+.footer__content-text span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 2rem;
+}
+
+.footer__content h2 {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.3rem;
+}
+
+.footer__content p {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  padding-top: 1rem;
+}
+
+.footer__mobile-content {
+  display: none;
+}
+
+@media screen and (max-width: 75.6rem) {
+  .footer__content {
+    display: none;
+  }
+
+  .footer__mobile-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    // padding: 1rem 0;
+  }
+
+  .footer__mobile-content p {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .footer__mobile-icons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+
+  .footer__mobile-icons img {
+    width: 1.834rem;
+    height: 1.503rem;
+  }
+
+  .footer__mobile-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 0;
+   
+    margin-bottom: 1rem;
+  }
+
+  .footer__mobile-contact p,
+  .span {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    margin: .5rem 0;
+  }
+
+  
+
+ 
+
+   .span {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 400;
+    border-top: 1px whitesmoke solid;
+    width: 150%;
+    text-align: center;
+  }
+}
+
 // @use "../../style/scss/utils/breakpoints" as breakpoint;
 // @use "../../style/scss/utils/functions" as fn;
 

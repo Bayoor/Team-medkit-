@@ -5,8 +5,8 @@ import Doc from "../../../assets/images/doc2.png";
 
 const SectionOne = () => {
   return (
-    <section className="hero container section__padding">
-      <div className="hero-content">
+    <section className="hero container section__padding ">
+      <div className="hero-content ">
         <div className="hero-image">
           <img src={Doc} alt={`Doc`} />
         </div>

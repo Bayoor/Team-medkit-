@@ -1,20 +1,20 @@
 @use "../../../style/scss/global/colors";
 .SectionFour {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
   background-color: #f6f6f6;
 }
 
 .SectionFour-wrapper {
   text-align: center;
-  margin-bottom: 30px;
+  margin: 3rem 0;
 }
 
 .SectionFour-wrapper h2 {
-  font-size: 36px;
   font-weight: 700;
-  color: #333333;
-  margin-bottom: 20px;
+  font-size: 3.2rem;
+  line-height: 3.8rem;
+  margin-bottom: 2rem;
 }
 
 .SectionFour-wrapper img {
@@ -22,57 +22,67 @@
 }
 
 .SectionFour-container {
+  // width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 60px;
+  gap: 3rem;
 }
 
 .SectionFour-content {
-  width: 320px;
-  margin-right: 20px;
-  margin-left: 20px;
+  flex: 1;
+  flex-basis: 20%;
+  // margin-right: 20px;
+  // margin-left: 20px;
   margin-bottom: 30px;
   text-align: center;
 }
 
 .SectionFour-content img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
+  width: 100%;
   margin-bottom: 20px;
 }
 
 .SectionFour-content h2 {
-  font-size: 24px;
-  font-weight: 700;
-  color: #333333;
-  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 3.2rem;
+  line-height: 3.8rem;
+  margin-bottom: 1rem;
 }
 
 .SectionFour-content p {
-  font-size: 18px;
-  font-weight: 500;
-  color: #666666;
-  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  margin-bottom: 2rem;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .icons img {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 1rem;
 }
 
 .SectionFour-header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 7rem;
+  padding: 2rem 0;
 }
 
 .SectionFour-header h2 {
-  font-size: 36px;
   font-weight: 700;
-  color: #333333;
-  margin-bottom: 20px;
+  font-size: 3.2rem;
+  line-height: 3.8rem;
+  margin-bottom: 5rem;
 }
 
 .SectionFour-heading {
@@ -82,11 +92,11 @@
 }
 
 .SectionFour-heading_content {
-  width: 49%;
-  background-color: white;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  width: 583px;
+  height: 192px;
+  width: 48%;
+  background-color: colors.$white;
+  padding: 3rem 4rem;
 }
 
 .SectionFour-heading_content p {
@@ -98,199 +108,72 @@
 }
 
 .SectionFour-heading_content .SectionFour-para {
-  font-size: 18px;
-  font-weight: 500;
-  color: #666666;
-  margin-top: 20px;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  color: colors.$secondary;
+  margin-top: 2rem;
+  text-align: left;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .SectionFour {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   padding-top: 1.6rem;
-//   background-color:  #F5F5F5;
-// }
-
-// .SectionFour-wrapper {
-//   @extend .SectionFour;
-//   margin-top: 1rem;
-// }
-
-// .SectionFour-wrapper h2 {
-//   margin: 1.6rem 0;
-//   font-weight: 700;
-//   font-size: 3.2rem;
-//   line-height: 3.8rem;
-// }
-
-// .SectionFour-wrapper img {
-//   max-width: 100%;
-// }
-
-// .SectionFour-container {
-//   @extend .SectionFour;
-//   flex-flow: row wrap;
-//   margin-top: 1.6rem;
-//   gap: 2.4rem;
-// }
-
-// .SectionFour-content {
-//   @extend .SectionFour;
-// }
-
-// .SectionFour-content img {
-//   max-width: 100%;
-// }
-
-// .SectionFour-content h2 {
-//   font-weight: 600;
-//   font-size: 3.2rem;
-//   line-height: 3.8rem;
-//   margin-top: 1rem;
-// }
-
-// .SectionFour-content p {
-//   font-weight: 400;
-//   font-size: 2rem;
-//   line-height: 2.3rem;
-//   margin-top: 1rem;
-// }
-
-// .icons {
-//   @extend .SectionFour;
-//   flex-direction: row;
-//   gap: 2rem;
-// }
-
-// .SectionFour-header {
-//   @extend .SectionFour;
-//   // flex-direction: row;
-// }
-
-// .SectionFour-header h2 {
-//   font-size: 32px;
-//   line-height: 38px;
-//   margin: 1.6rem 0;
-// }
-
-// .SectionFour-heading {
-//   flex-direction: column;
-//   @extend .SectionFour;
-//   flex-flow: row wrap;
-//   gap: 6rem;
-// }
-
-// .SectionFour-heading_content {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   max-width: 583px;
-//   height: 192px;
-// //   outline: 1px yellow dashed;
-//   background-color: colors.$white;
-//   flex: 1;
-//   flex-wrap: wrap;
-//   padding: 0 9rem;
-// }
-
-// .SectionFour-heading_content p {
-//   font-weight: 400;
-//   font-size: 20px;
-//   line-height: 23px;
-// }
-
-// .SectionFour-para {
-//   font-weight: 700;
-//   color: red;
-//   margin-top: 4rem;
-// }
-
-// @media screen and (max-width: 76.8rem) {
-//   .SectionFour-wrapper h2 {
-//     text-align: center;
-//     font-size: 2.8rem;
-//     line-height: 3.3rem;
-//   }
-
-//   .SectionFour-content h2 {
-//     font-size: 2.4rem;
-//     line-height: 2.8rem;
-//   }
-
-//   .SectionFour-content p {
-//     font-size: 1.2rem;
-//     line-height: 1.4rem;
-//   }
-
-//   .SectionFour-heading_content {
-//     // display: flex;
-//     // flex-direction: column;
-//     width: 350px;
-//     height: 200px;
-  
-//     background-color: colors.$white;
-   
-//     // padding: 0 1.5rem;
-//   }
-  
-//   .SectionFour-heading_content p {
-//     font-size: 1.4rem;
-//     line-height: 1.8rem;
-//   }
-  
-
-
-
-// }
+@media screen and (max-width: 76.8rem) {
+  .SectionFour-container {
+    padding: 1rem 3rem;
+  }
+
+  .SectionFour-wrapper h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .SectionFour-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .SectionFour-content h2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .SectionFour-content p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .icons img {
+    max-width: 100%;
+  }
+
+  .SectionFour-header h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .SectionFour-heading_content {
+    padding: 2rem 1rem;
+  }
+
+  .SectionFour-heading_content p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: start;
+  }
+
+  .SectionFour-heading_content .SectionFour-para {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+   .SectionFour-heading_content .span {
+    translate: 0 -350% ;
+   }
+
+
+}

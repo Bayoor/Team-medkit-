@@ -1,0 +1,82 @@
+@use "../../style/scss/global/colors";
+
+.AppointmentNavbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.AppointmentNavbar-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.AppointmentNavbar-logo {
+  margin-top: 1.5rem;
+}
+
+.AppointmentNavbar-text h2 {
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 3.8rem;
+  color: colors.$primary;
+}
+
+.AppointmentNavbar-text p {
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  color: colors.$primary;
+  text-align: center;
+}
+
+.AppointmentNavbar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  list-style: none;
+}
+
+.AppointmentNavbar-links li {
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  color: colors.$primary;
+}
+
+.AppointmentNavbar-links li:nth-child(2) {
+  color: #c5221f;
+}
+
+@media screen and (max-width: 756px) {
+  .AppointmentNavbar {
+    padding: 1rem 1rem;
+    
+  }
+
+  
+
+  .AppointmentNavbar-content img {
+    width: 20%;
+    // outline: 1px solid red;
+  }
+
+  .AppointmentNavbar-text h2 {
+    font-size: 1.84564rem;
+    line-height: 2.2rem;
+  }
+
+  .AppointmentNavbar-text p {
+    font-size: 1.15353rem;
+    line-height: 1.4rem;
+  }
+
+  .AppointmentNavbar-links li {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+}

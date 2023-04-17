@@ -74,19 +74,25 @@ const SectionFour = () => {
             <p>
               “I had a wonderful experience with Medkit. They ensured my health
               was greatly taken care of. I highly recommend Medkit.”
-              <p className="SectionFour-para">Aliya Roll</p>
             </p>
+              <p className="SectionFour-para">Aliya Roll</p>
           </div>
 
           <div className="SectionFour-heading_content">
             <p>
               “My treatment was second to none and the staffs of Medkit were
               polite and caring”
-              <p className="SectionFour-para">Elo Zona</p>
-            </p>
+            </p><br/>
+              <p className="SectionFour-para span">Elo Zona</p>
           </div>
         </div>
       </div>
+
+      <div className="SectionFour-wrapper">
+        <img src={line} alt={`Line`} />
+      </div>
+
+
     </section>
   );
 };

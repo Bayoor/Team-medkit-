@@ -1,54 +1,12 @@
 @use "../../style/scss/global/colors" as colors;
-// @use "../../style/scss/utils/functions" as fn;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// // @use "../../style/scss/utils/functions" as fn;
 
 .Navbar {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   // background-color: red;
-  width: 100%;
 }
 
 .Navbar-content {
@@ -56,7 +14,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  width: 15%;
+  width: 30%;
 }
 
 .Navbar-logo {
@@ -71,7 +29,7 @@
 
 .Navbar-text h1 {
   font-weight: 700;
-  font-size: 3.2;
+  font-size: 3.2rem;
   line-height: 3.8rem;
 }
 
@@ -79,6 +37,7 @@
   font-weight: 400;
   font-size: 2rem;
   line-height: 2.3rem;
+  text-align: center;
 }
 
 .Navbar-menu {
@@ -86,8 +45,7 @@
   justify-content: center;
   align-items: center;
   list-style: none;
-  margin: 0 auto;
-  // width: 85%;
+  width: 75%;
 }
 
 .Navbar-menu li {
@@ -98,9 +56,21 @@
   margin: 0 2rem;
 }
 
-// .Navbar-auth {
-  // translate: 14rem 0;
-// }
+.Navbar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 50%;
+}
+
+.Navbar-auth {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
 
 .Navbar-auth button {
   font-weight: 700;
@@ -115,7 +85,7 @@
   color: colors.$white;
 }
 
-.nav_item.active {
+.active {
   color: red;
 }
 
@@ -130,58 +100,78 @@
   cursor: pointer;
 }
 
-// @media (max-width: 768px) {
-  // .Navbar {
-    // flex-direction: column;
-    // align-items: flex-start;
-    // position: relative;
-  //   padding: 1rem 2rem;
+@media (max-width: 756px) {
+  .Navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    padding: 1rem 2rem;
+  }
+
+  .Navbar-logo {
+    width: 2.884rem;
+    height: 2.884rem;
+  }
+
+  .Navbar-content {
+    translate: 1rem 0;
+  }
+
+  // .Navbar-text {
+  //   margin-left: 6rem;
   // }
 
-  // .Navbar-logo {
-  //   width: 2.884rem;
-  //   height: 2.884rem;
-  // }
+  .Navbar-text h1 {
+    font-size: 1.84564rem;
+    line-height: 2.2rem;
+  }
 
-  // .Navbar-content {
-  //   translate: -3rem 0;
-  // }
+  .Navbar-text p {
+    font-size: 1.15353rem;
+    line-height: 1.4rem;
+    text-align: center;
+  }
 
-  // .Navbar-text h1 {
-  //   font-size: 1.84564rem;
-  //   line-height: 2.2rem;
-  // }
+  .Navbar-toggle {
+    display: block;
+    position: absolute;
+    right: 3rem;
+    top: 1.8rem;
+  }
 
-  // .Navbar-text p {
-  //   font-size: 1.15353rem;
-  //   line-height: 1.4rem;
-  //   text-align: center;
-  // }
+  .Navbar-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
 
-  // .Navbar-toggle {
-  //   display: block;
-  //   position: absolute;
-  //   right: 3rem;
-  //   top: 1.8rem;
-  // }
+  .Navbar-menu.open {
+    display: flex;
+  }
 
-  // .Navbar-menu {
-  //   display: none;
-  //   flex-direction: column;
-  //   width: 100%;
-  //   text-align: center;
-  //   margin-top: 1rem;
-  // }
+  .Navbar-menu li {
+    margin: 1rem 0;
+  }
 
-  // .Navbar-menu.open {
-  //   display: flex;
-  // }
+  .Navbar-links {
+    flex-direction: column;
+  }
 
-  // .Navbar-menu li {
-  //   margin: 1rem 0;
-  // }
+  .Navbar-links li,
+  .Navbar-auth li,
+  .Navbar-auth li button {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
 
-  // .Navbar-auth {
-  //   translate: 0;
-   
-// }
+  .Navbar-auth {
+    flex-direction: column;
+  }
+
+  .Navbar-auth li button {
+    width: 8.8rem;
+    height: 3.6rem;
+  }
+}

@@ -1,0 +1,19 @@
+@use "../../../style/scss/global/colors";
+
+.ServiceHeader-btn {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  color: colors.$white;
+  background: colors.$primary;
+  border-radius: 2rem;
+  width: 15.6rem;
+  height: 6rem;
+  margin-top: 2rem;  
+  
+}
+
+.ServiceHeader-btn:hover {
+    background-color: colors.$secondary;
+}
+

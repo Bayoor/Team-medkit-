@@ -1,7 +1,7 @@
 @use "../../../style/scss/global/colors" as colors;
 
 .hero {
-  background-color: #f7f7f7;
+  // background-color: #def1f9;
 }
 
 .hero-content {
@@ -14,10 +14,13 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center bottom;
+  margin-bottom: 5rem;
+  // flex-wrap: wrap;
 }
 
 .hero-image {
-  flex-basis: 50%;
+  // flex: 1;
+  width: 50%;
 }
 
 .hero-image img {
@@ -26,8 +29,8 @@
 }
 
 .hero-text {
-  flex-basis: 50%;
-  text-align: left;
+  width: 50%;
+  // text-align: left;
   padding: 0 4rem;
 }
 
@@ -62,8 +65,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
- 
-  translate: -10% 100% ;
+  position: relative;
+  top: 18rem;
+  
+
+
+  // translate: -10% 100%;
 }
 
 .hero-service h2 {
@@ -72,6 +79,8 @@
   line-height: 3.8rem;
   margin-bottom: 1rem;
   color: colors.$white;
+  margin: 2rem;
+  margin-left: -7rem;
 }
 
 .hero-service span {
@@ -80,6 +89,9 @@
   line-height: 2.3rem;
 
   color: #707173;
+  position: relative;
+  top: -1rem;
+  left: -11rem;
 
   // margin-right: 10px;
 }
@@ -94,37 +106,119 @@
   background: colors.$white;
   color: colors.$secondary;
   cursor: pointer;
+  margin-bottom: 1.6rem;
+  margin-left: -7rem;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 1rem 3rem;
   }
 
-  .hero-image img {
-    width: 80%;
+  .hero-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+
+    background-image: none;
+
+    margin-bottom: 5rem;
+    // flex-wrap: wrap;
   }
 
   .hero-text {
-    text-align: center;
-    margin-top: 2rem;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .hero-text h2 {
+    font-size: 2rem;
+    line-height: 137.19%;
+  }
+
+  .hero-text p {
+    font-size: 1.2rem;
+    line-height: 134.19%;
+  }
+
+  .hero-image {
+    display: none;
   }
 
   .hero-service {
-    margin-top: 2rem;
-    text-align: center;
+    display: none;
   }
+
+  .hero-text button {
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    padding: 1rem;
+    color: colors.$white;
+    background-color: colors.$primary;
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+  }
+
+
+
 }
 
-@media only screen and (max-width: 767px) {
-  .hero-image img {
-    max-width: 100%;
-    height: auto;
-  }
-}
+// @media only screen and (min-width: 768px) {
+//   .hero-content {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-start;
+//     align-items: flex-start;
+//   }
+
+//   .hero-image img {
+//     width: 80%;
+//   }
+
+//   .hero-text {
+//     display: flex;
+//     flex-direction: row;
+//     text-align: start;
+//     margin-top: 2rem;
+//   }
+
+//   .hero-service {
+//     margin-top: 2rem;
+//     text-align: center;
+//   }
+// }
+
+// @media only screen and (max-width: 767px) {
+//   .hero {
+//     padding: 1rem 1rem;
+//   }
+
+//   .hero-image img {
+//     display: none;
+//   }
+
+//   .hero-text {
+//     width: 100%;
+//     padding: 0;
+//   }
+
+//   .hero-text h2 {
+//     font-size: 2rem;
+//     line-height: 137.19%;
+//   }
+
+//   .hero-text p {
+//     font-size: 12px;
+//     line-height: 134.19%;
+//   }
+
+//   .hero-content {
+//     background-image: none;
+//   }
+// }
 
 // .hero-content {
 //   display: flex;

@@ -9,7 +9,7 @@ import clock from "../../../assets/icons/clock.svg";
 
 const SectionThree = () => {
   return (
-    <section className="SectionThree container section__padding">
+    <section className="SectionThree section__padding ">
       <div className="SectionThree-wrapper">
         <h2>MEDKIT SPECIALITIES</h2>
         <img src={line} alt={`Line`} />
