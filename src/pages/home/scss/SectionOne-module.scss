@@ -30,34 +30,42 @@
 
 .hero-text {
   width: 50%;
-  // text-align: left;
+  height: auto;
   padding: 0 4rem;
+  margin-top: -15rem;
+
 }
 
 .hero-text h2 {
   font-weight: 700;
   font-size: 3.2rem;
   line-height: 4.4rem;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
 }
 
 .hero-text p {
   font-weight: 500;
   font-size: 2rem;
   line-height: 2.7rem;
-  margin-bottom: 3rem;
+  // margin-bottom: 3rem;
 }
 
 .hero-text button {
   font-weight: 700;
   font-size: 1.6rem;
   line-height: 1.9rem;
-  padding: 12px 30px;
+  width: 13.2rem;
+  height: 4.8rem;
   color: colors.$white;
   background-color: colors.$primary;
   border: none;
   border-radius: 1.5rem;
   cursor: pointer;
+  margin-top: 2rem;
+}
+
+.hero-text button:hover {
+  background: colors.$secondary;
 }
 
 .hero-service {
@@ -66,11 +74,11 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  top: 18rem;
+  top: 25rem;
   
 
 
-  // translate: -10% 100%;
+  
 }
 
 .hero-service h2 {
@@ -100,7 +108,8 @@
   font-weight: 600;
   font-size: 2rem;
   line-height: 2.3rem;
-  padding: 1.2rem 3rem;
+ width: 24.3rem;
+ height: 6rem;
   border: none;
   border-radius: 2rem;
   background: colors.$white;
@@ -108,6 +117,11 @@
   cursor: pointer;
   margin-bottom: 1.6rem;
   margin-left: -7rem;
+}
+
+.hero-service button:hover {
+  background: colors.$secondary;
+  color: colors.$white;
 }
 
 @media screen and (max-width: 768px) {
@@ -130,6 +144,7 @@
   .hero-text {
     width: 100%;
     padding: 0 1rem;
+    margin-top: 4rem;
   }
 
   .hero-text h2 {

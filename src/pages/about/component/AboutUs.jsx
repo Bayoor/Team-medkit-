@@ -22,9 +22,10 @@ const AboutUs = () => {
         // alignItems={`center`}
         marginRight={[`3rem`, `20rem`]}
         marginTop={[`1rem`, `7rem`]}
+        w={`100%`}
         // gap={[`2.5rem`, `0`]}
       >
-        <Flex justifyContent={[`space-around`]} alignContent={[`center`]} gap={[`4rem`, `0`]}>
+        <Flex justifyContent={[`space-around`]} alignContent={[`center`]} gap={[`0`, `0`]}>
           <Box w={`100%`}>
             <img  src={HealthWorker} alt="" />
           </Box>
@@ -77,12 +78,12 @@ const AboutUs = () => {
           </Box>
         </Flex>
 
-        <Flex justifyContent={[`space-around`]} alignItems={[`center`]} gap={[`1rem`, `18rem`]}>
+        <Flex justifyContent={[`space-around`]} alignItems={[`center`]} gap={[`1rem`, `0rem`]} >
           <Box
             display={[`none`, `flex`]}
             position={[`none`, `relative`]}
             top={[`0`, `-6rem`]}
-            left={[`0`, `12rem`]}
+            left={[`0`, `10rem`]}
           >
             <img src={HealthWorker_1} alt="" />
           </Box>
@@ -94,6 +95,7 @@ const AboutUs = () => {
               lineHeight={[`2.684rem`, `4.294rem`]}
               mt={[`4rem`, `-9rem`]}
               mb={[`2rem`]}
+              ml={[`0`, `.6rem`]}
             >
               Why Patients Choose Our Hospital?
             </Heading>
@@ -106,6 +108,7 @@ const AboutUs = () => {
               fontWeight={[400]}
               lineHeight={[`1.61rem`, `2.684rem`]}
               m={`2rem 0`}
+             
             >
               <Image w={[`2.5rem`, `5rem`]} h={[`2.5rem`, `5rem`]} src={square_tick} alt={`square-tick`} />
               <li>Lorem ipsum dolor sit amet consectetur vestibulum.</li>

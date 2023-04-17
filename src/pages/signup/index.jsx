@@ -135,7 +135,7 @@ const SignUp = () => {
                   value: /^[A-Z][a-zA-Z '.-]*[A-Za-z][^-]$/,
                   message: (
                     <Text>
-                      Name must start with capital letter, special character is allow <br /> but optional and it must not end with an hyphen
+                      Name must start with capital letter, special character is allowed <br /> but optional and it must not end with an hyphen
                     </Text>
                   ),
                 },

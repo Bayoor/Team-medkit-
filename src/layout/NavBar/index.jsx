@@ -97,9 +97,9 @@ const Navbar = () => {
         }}
       >
         {isOpen ? (
-          null
+        null
         ) : (
-          <FaBars size={24} color={`#2f98c2`} />
+          <FaBars size={24} color={`#2f98c2`} padding={`1rem`}/>
         )}
       </button>
     </nav>
