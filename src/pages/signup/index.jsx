@@ -133,8 +133,11 @@ const SignUp = () => {
                 required: "Name is required",
                 pattern: {
                   value: /^[A-Z][a-zA-Z '.-]*[A-Za-z][^-]$/,
-                  message:
-                    "Name must start with capital letter, special character is allowed but optional and it must not end with an hyphen.",
+                  message: (
+                    <Text>
+                      Name must start with capital letter, special character is allow <br /> but optional and it must not end with an hyphen
+                    </Text>
+                  ),
                 },
               })}
               id={`full name`}
@@ -149,17 +152,16 @@ const SignUp = () => {
               textAlign={`center`}
               outline={`2px solid  rgba(0, 0, 0, 0.2)`}
             />
-            <span
-              style={{
-                color: "red",
-                display: "flex",
-                justifyContent: "start",
-                alignItems: "center",
-                margin: "1rem   1rem",
-              }}
+            <Text
+              color={`red`}
+              display={`flex`}
+              // flexDir={`column`}
+              justifyContent={`start`}
+              alignItems={`flex-start`}
+              margin={"1rem   1rem"}
             >
               {errors?.name?.message}
-            </span>
+            </Text>
           </Box>
 
           <Box marginBottom={`3rem`}>
@@ -226,8 +228,12 @@ const SignUp = () => {
                 },
                 pattern: {
                   value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)(?=.*[!@#$*])/,
-                  message:
-                    "Password must have 1 uppercase, 1 lowercase and a special character",
+                  message: (
+                    <Text>
+                      Password must have 1 uppercase, 1 lowercase and
+                      <br /> a special character
+                    </Text>
+                  ),
                 },
               })}
               id={`Password`}
