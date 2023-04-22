@@ -77,8 +77,8 @@
   font-size: 2.4rem;
   line-height: 2.8rem;
 
-  width: 130px;
-  height: 50px;
+  width: 13rem;
+  height: 5rem;
   background: linear-gradient(123.09deg, #2f98c2 -7.49%, #1e3673 78.8%);
   border-radius: 15px;
   border: none;
@@ -86,7 +86,8 @@
 }
 
 .active {
-  color: red;
+  color: colors.$primary;
+  cursor: pointer;
 }
 
 .Navbar-auth button:hover {
@@ -100,7 +101,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 756px) {
+@media (max-width: 75.6rem) {
   .Navbar {
     flex-direction: column;
     align-items: flex-start;

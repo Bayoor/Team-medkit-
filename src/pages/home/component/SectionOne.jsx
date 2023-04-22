@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const SectionOne = () => {
   return (
-    <section className="hero container section__padding ">
+    <section className="hero section__padding ">
       <div className="hero-content ">
         <div className="hero-image">
           <img src={Doc} alt={`Doc`} />

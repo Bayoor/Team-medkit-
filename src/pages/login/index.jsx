@@ -8,26 +8,57 @@ import {
   Image,
   Input,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import React from "react";
+import axios from "axios";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/icons/logo.svg";
 import facebook from "../../assets/images/facebook.png";
 import gmail from "../../assets/images/gmail.png";
 import linkedIn from "../../assets/images/linkedIn.png";
 import people_4 from "../../assets/images/people_4.png";
+
 const LogIn = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm();
 
-  const handleSubmitForm = (data) => {
-    reset();
-    console.log(data);
+  const toast = useToast({ position: " top" });
+
+  const handleSubmitForm = async (data) => {
+    // reset();
+    // console.log(data);
+    try {
+      const response = await axios.post(
+        `https://medkit.onrender.com/login`,
+        data
+      );
+      console.log(response);
+      toast({
+        title: "Successful",
+        description: " Login Successful",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      });
+      if (response.status === 200) {
+        navigate("/appointment", { replace: true });
+      }
+    } catch (error) {
+      toast({
+        title: "Error!",
+        description: " Email or Password not correct",
+        status: "warning",
+        duration: 9000,
+        isClosable: true,
+      });
+    }
   };
 
   return (
@@ -122,6 +153,7 @@ const LogIn = () => {
               fontWeight={400}
               lineHeight={[`1,586rem`, `2.644rem`]}
               textAlign={`center`}
+              htmlFor={`Email`}
             >
               Email
             </FormLabel>
@@ -168,6 +200,7 @@ const LogIn = () => {
               fontWeight={400}
               lineHeight={[`1,586rem`, `2.644rem`]}
               textAlign={`center`}
+              htmlFor={`Password`}
             >
               Password
             </FormLabel>
@@ -181,7 +214,8 @@ const LogIn = () => {
                   message: "Password should be at least 8 characters",
                 },
                 pattern: {
-                  value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)(?=.*[!@#$*])/,
+                  value:
+                    /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
                   message:
                     "Password must have 1 uppercase, 1 lowercase and a special character",
                 },
@@ -266,7 +300,11 @@ const LogIn = () => {
       </Box>
 
       <Box>
-        <Image src={people_4} alt={`A picture of a female Doctor`} />
+        <Image
+          src={people_4}
+          alt={`A picture of a female Doctor`}
+          display={{ base: `none`, sm: `none`, md: `none`, lg: `flex` }}
+        />
       </Box>
     </Flex>
   );

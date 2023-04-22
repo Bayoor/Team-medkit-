@@ -8,9 +8,11 @@ import {
   Image,
   Input,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import React from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import logo from "../../assets/icons/logo.svg";
 import facebook from "../../assets/images/facebook.png";
@@ -23,12 +25,33 @@ const SignUp = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
+    
   } = useForm();
 
-  const handleSubmitForm = (data) => {
-    reset();
-    console.log(data);
+  const toast = useToast({ position: ' top' })
+
+  const handleSubmitForm = async (data) => {
+    try {
+      const res = await axios.post(
+        `https://medkit.onrender.com/signup`, data
+      );
+      console.log(res);
+      toast({
+        title: 'Successful',
+        description: ' Registration Successful',
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      })
+    } catch {
+      toast({
+        title: 'Error!',
+        description: ' Email or Password not correct',
+        status: 'warning',
+        duration: 9000,
+        isClosable: true,
+      })
+    }
   };
 
   return (
@@ -64,16 +87,16 @@ const SignUp = () => {
             alignContent={`center`}
           >
             <Heading
-              fontSize={[`1.846rem`, `3.2rem`]}
+              fontSize={[`1.846rem`,`2.2rem`, `2.8rem`, `3.2rem`]}
               fontWeight={700}
               lineHeight={[`2.163rem`, `3.75rem`]}
             >
               MEDKIT.COM
             </Heading>
             <Text
-              fontSize={[`1.154rem`, `2rem`]}
+              fontSize={[`1.154rem`,`1.7rem`, `2rem`]}
               fontWeight={400}
-              lineHeight={[`1.352rem`, `2.344rem`]}
+              lineHeight={[`1.352rem`, `2rem`, `2.344rem`]}
               textAlign={`center`}
             >
               Health is wealth
@@ -82,9 +105,9 @@ const SignUp = () => {
         </Box>
         <Box>
           <Heading
-            fontSize={[`2rem`, `3.2rem`]}
+            fontSize={[`2rem`, `2.6rem`, `3rem`, `3.2rem`]}
             fontWeight={600}
-            lineHeight={[`2.684rem`, `4.294rem`]}
+            lineHeight={[`2.684rem`, `3.2rem`, `4.294rem`]}
             marginBottom={`2rem`}
           >
             Create an Account
@@ -100,7 +123,7 @@ const SignUp = () => {
             <Image src={linkedIn} alt={`LinkedIn`} />
           </Box>
           <Text
-            fontSize={[`1.2rem`, `2rem`]}
+            fontSize={[`1.2rem`, `1.6rem`, `1.8rem`, `2rem`]}
             fontWeight={400}
             lineHeight={[`1,586rem`, `2.644rem`]}
             marginBottom={`2rem`}
@@ -123,13 +146,15 @@ const SignUp = () => {
               fontWeight={400}
               lineHeight={[`1,586rem`, `2.644rem`]}
               textAlign={`center`}
+              htmlFor={`fullname`}
             >
               Full Name
             </FormLabel>
             <Input
               type={`text`}
-              name={`name`}
-              {...register("name", {
+              id={`fullname`}
+              name={`fullname`}
+              {...register("fullname", {
                 required: "Name is required",
                 pattern: {
                   value: /^[A-Z][a-zA-Z '.-]*[A-Za-z][^-]$/,
@@ -140,13 +165,12 @@ const SignUp = () => {
                   ),
                 },
               })}
-              id={`full name`}
               placeholder={`Aisha Oyelola`}
-              fontSize={[`1.2rem`, `2rem`]}
+              fontSize={[`1.2rem`, `1.6rem`, `2rem`]}
               fontWeight={400}
               lineHeight={[`1,586rem`, `2.644rem`]}
-              w={[`32.5rem`, `46.7rem`]}
-              h={[`3.9rem`, `6rem`]}
+              w={[`32.5rem`, `30rem`, `46.7rem`]}
+              h={[`3.9rem`, `3.9rem`, `6rem`]}
               borderRadius={[`2rem`, `3rem`]}
               bgColor={`#fff`}
               textAlign={`center`}
@@ -160,7 +184,7 @@ const SignUp = () => {
               alignItems={`flex-start`}
               margin={"1rem   1rem"}
             >
-              {errors?.name?.message}
+              {errors?.fullname?.message}
             </Text>
           </Box>
 
@@ -170,11 +194,13 @@ const SignUp = () => {
               fontWeight={400}
               lineHeight={[`1,586rem`, `2.644rem`]}
               textAlign={`center`}
+               htmlFor={`email`}
             >
               Email
             </FormLabel>
             <Input
               type={`email`}
+              id={`email`}
               name={`email`}
               {...register("email", {
                 required: "Email is required",
@@ -183,13 +209,12 @@ const SignUp = () => {
                   message: "Email is not valid.",
                 },
               })}
-              id={`Email`}
               placeholder={`Or use your email address:`}
               fontSize={[`1.2rem`, `2rem`]}
               fontWeight={400}
               lineHeight={[`1,586rem`, `2.644rem`]}
-              w={[`32.5rem`, `46.7rem`]}
-              h={[`3.9rem`, `6rem`]}
+              w={[`32.5rem`, `30rem`, `46.7rem`]}
+              h={[`3.9rem`,  `3.9rem`, `6rem`]}
               borderRadius={[`2rem`, `3rem`]}
               bgColor={`#fff`}
               textAlign={`center`}
@@ -214,11 +239,13 @@ const SignUp = () => {
               fontWeight={400}
               lineHeight={[`1,586rem`, `2.644rem`]}
               textAlign={`center`}
+               htmlFor={`password`}
             >
               Password
             </FormLabel>
             <Input
               type={`password`}
+              id={`password`}
               name={`password`}
               {...register("password", {
                 required: "Password is required",
@@ -227,7 +254,7 @@ const SignUp = () => {
                   message: "Password should be at least 8 characters",
                 },
                 pattern: {
-                  value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)(?=.*[!@#$*])/,
+                  value: /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
                   message: (
                     <Text>
                       Password must have 1 uppercase, 1 lowercase and
@@ -236,13 +263,12 @@ const SignUp = () => {
                   ),
                 },
               })}
-              id={`Password`}
               placeholder={`Min 8 characters`}
               fontSize={[`1.2rem`, `2rem`]}
               fontWeight={400}
               lineHeight={[`1,586rem`, `2.644rem`]}
-              w={[`32.5rem`, `46.7rem`]}
-              h={[`3.9rem`, `6rem`]}
+              w={[`32.5rem`, `30rem`, `46.7rem`]}
+              h={[`3.9rem`,  `3.9rem`,  `6rem`]}
               borderRadius={[`2rem`, `3rem`]}
               bgColor={`#fff`}
               textAlign={`center`}
@@ -266,8 +292,8 @@ const SignUp = () => {
               fontSize={[`1.2rem`, `2rem`]}
               fontWeight={400}
               lineHeight={[`1,586rem`, `2.644rem`]}
-              w={[`32.5rem`, `46.7rem`]}
-              h={[`3.9rem`, `6rem`]}
+              w={[`32.5rem`, `30rem`,  `46.7rem`]}
+              h={[`3.9rem`,  `3.9rem`, `6rem`]}
               borderRadius={`2rem`}
               bgColor={`#1e3673`}
               textAlign={`center`}
@@ -304,7 +330,7 @@ const SignUp = () => {
       </Box>
 
       <Box>
-        <Image src={healthWorker} alt={`A picture of a female Doctor`} />
+        <Image src={healthWorker}  display={{base: `none`, md: `none`, lg: `flex`}} alt={`A picture of a female Doctor`} />
       </Box>
     </Flex>
   );

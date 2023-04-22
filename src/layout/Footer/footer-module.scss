@@ -2,11 +2,11 @@
 
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: inherit;
   background-color: colors.$secondary;
   color: colors.$white;
-  padding: 6rem 6rem;
+  padding: 6rem 2rem;
 }
 
 .footer__content-item {

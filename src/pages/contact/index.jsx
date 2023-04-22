@@ -8,8 +8,12 @@ import {
   Input,
   Text,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
 import React from "react";
+import axios from "axios";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import Layout from "../../layout/Layout";
 import location from "../../assets/icons/location.svg";
 import phone_icon from "../../assets/icons/phone_icon.svg";
@@ -19,6 +23,52 @@ import map from "../../assets/images/map.png";
 import contact_bg from "../../assets/images/contact_bg.png";
 
 const ContactUs = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const navigate = useNavigate();
+
+  const toast = useToast({position: `top`});
+
+  const handleSubmitForm = async (data) => {
+    try{
+      const response= await axios.post(
+        `https://medkit.onrender.com/messages`,
+        data
+      )
+      console.log(response);
+      toast({
+        title: "Successful",
+        description: " Message Sent",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      });
+      if (response.status === 200) {
+        navigate("/signup", { replace: true });
+      }
+    } catch (error) {
+      toast({
+        title: "Error!",
+        description: " Message not sent. Try again",
+        status: "warning",
+        duration: 9000,
+        isClosable: true,
+      });
+    }
+  };
+    
+
+    
+  
+
+  const onSubmitForm = (data) => {
+    console.log(data);
+  }
+
   return (
     <Layout>
       <Box bgColor={`#DEF1F9`}>
@@ -26,11 +76,11 @@ const ContactUs = () => {
           display={`flex`}
           justifyContent={`center`}
           alignItems={`center`}
-          padding={[`4rem 3rem`,`8rem 0`]}
+          padding={[`4rem 3rem`, `8rem 0`]}
           bgImage={contact_bg}
-          bgSize={[ `cover`]}
+          bgSize={[`cover`]}
           bgRepeat={`no-repeat`}
-         
+
           // mt={`6rem`}
         >
           <Heading
@@ -69,7 +119,7 @@ const ContactUs = () => {
               h={[`auto`, `6rem`]}
               src={location}
               alt=""
-              padding={[`.5rem 0`,`1rem 0`]}
+              padding={[`.5rem 0`, `1rem 0`]}
             />
             <Text textAlign={`center`}>1, Ogunlesi str, onipanu, Lagos.</Text>
           </Box>
@@ -95,7 +145,7 @@ const ContactUs = () => {
               h={[`auto`, `6rem`]}
               src={phone_icon}
               alt=""
-              padding={[`.5rem 0`,`1rem 0`]}
+              padding={[`.5rem 0`, `1rem 0`]}
             />
             <Text>(233) 768-0202</Text>
             <Text>(234) 799-1020</Text>
@@ -122,7 +172,7 @@ const ContactUs = () => {
               h={[`auto`, `6rem`]}
               src={email}
               alt=""
-              padding={[`.5rem 0`,`1rem 0`]}
+              padding={[`.5rem 0`, `1rem 0`]}
             />
             <Text>www.medkit.com</Text>
             <Text>info@medkit.com</Text>
@@ -182,7 +232,8 @@ const ContactUs = () => {
           </Heading>
 
           <FormControl
-            isRequired
+            onSubmit={handleSubmit(handleSubmitForm)}
+            as={`form`}
             display={`flex`}
             flexDir={`column`}
             justifyContent={`center`}
@@ -193,48 +244,80 @@ const ContactUs = () => {
               flexDir={`row`}
               alignItems={`center`}
               justifyContent={`center`}
-              gap={[`1rem`, `3rem`]}
+              gap={[`1.8rem`, `3rem`]}
+              mb={`2rem`}
             >
-              <Input
-                type={`text`}
-                name={`username`}
-                placeholder={`Your Name*`}
-                _placeholder={{ opacity: 0.5, color: `#000` }}
-                fontSize={[`1.2rem`, `2rem`]}
-                fontWeight={400}
-                lineHeight={[`1.406rem`, `2.344rem`]}
-                w={[`11.8rem`, `39rem`]}
-                h={[`3.9rem`, `6rem`]}
-                outline={`1px solid #2f98c2`}
-                borderRadius={[`1rem`, `2rem`]}
-                textIndent={[`.1rem`, `2rem`]}
-              />
-              <Input
-                type={`tel`}
-                name={`phone`}
-                placeholder={`Phone*`}
-                _placeholder={{ opacity: 0.5, color: `#000` }}
-                fontSize={[`1.2rem`, `2rem`]}
-                fontWeight={400}
-                lineHeight={[`1.406rem`, `2.344rem`]}
-                w={[`11.8rem`, `39rem`]}
-                h={[`3.9rem`, `6rem`]}
-                outline={`1px solid #2f98c2`}
-                borderRadius={[`1rem`, `2rem`]}
-                textIndent={[`-.1rem`, `2rem`]}
-              />
+              <Box display={`flex`} flexDir={`column`}>
+                <Text color={`red`} m={`.5rem`} fontSize={[`1.2rem`, `1.6rem`]}>
+                  {errors?.username?.message}
+                </Text>
+                <Input
+                  type={`text`}
+                  name={`username`}
+                  {...register("username", {
+                    required: "Field can't be empty",
+                    message: "Enter a username",
+                  })}
+                  placeholder={`Your Name*`}
+                  _placeholder={{ opacity: 0.5, color: `#000` }}
+                  fontSize={[`1.2rem`, `2rem`]}
+                  fontWeight={400}
+                  lineHeight={[`1.406rem`, `2.344rem`]}
+                  w={[`11.8rem`, `39rem`]}
+                  h={[`3.9rem`, `6rem`]}
+                  outline={`1px solid #2f98c2`}
+                  borderRadius={[`1rem`, `2rem`]}
+                  textIndent={[`.1rem`, `2rem`]}
+                />
+              </Box>
+
+              <Box display={`flex`} flexDir={`column`}>
+                <Text color={`red`} m={`.5rem`} fontSize={[`1.2rem`, `1.6rem`]}>
+                  {errors?.phonenumber?.message}
+                </Text>
+                <Input
+                  type={`tel`}
+                  name={`phonenumber`}
+                  {...register("phonenumber", {
+                    required: "Enter a phone number",
+                    pattern: {
+                      value: /^[+]?[(]?[0-9]{1,4}[)]?[-\s\./0-9]*$/,
+                      message: "Phone number must not contain text",
+                    },
+                  })}
+                  placeholder={`Phone*`}
+                  _placeholder={{ opacity: 0.5, color: `#000` }}
+                  fontSize={[`1.2rem`, `2rem`]}
+                  fontWeight={400}
+                  lineHeight={[`1.406rem`, `2.344rem`]}
+                  w={[`11.8rem`, `39rem`]}
+                  h={[`3.9rem`, `6rem`]}
+                  outline={`1px solid #2f98c2`}
+                  borderRadius={[`1rem`, `2rem`]}
+                  textIndent={[`-.1rem`, `2rem`]}
+                />
+              </Box>
             </Box>
 
-            <Box display={`flex`}>
+            <Box mb={`2rem`}>
+              <Text color={`red`} m={`.5rem`} fontSize={[`1.2rem`, `1.6rem`]}>
+                {errors?.email?.message}
+              </Text>
               <Input
                 type={`email`}
                 name={`email`}
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[^@]+@[^@]+\.[^@ .]{2,}$/,
+                    message: "Email is not valid.",
+                  },
+                })}
                 placeholder={`Email*`}
                 _placeholder={{ opacity: 0.5, color: `#000` }}
                 fontSize={[`1.2rem`, `2rem`]}
                 fontWeight={400}
                 lineHeight={[`1.406rem`, `2.344rem`]}
-                marginTop={`3rem`}
                 w={[`24.6rem`, `81.3rem`]}
                 h={[`3.9rem`, `6rem`]}
                 outline={`1px solid #2f98c2`}
@@ -244,13 +327,21 @@ const ContactUs = () => {
             </Box>
 
             <Box>
+              <Text color={`red`} m={`.5rem`} fontSize={[`1.2rem`, `1.6rem`]}>
+                {errors?.textarea?.message}
+              </Text>
               <Textarea
+                type={`text`}
+                name={`textarea`}
+                {...register("textarea", {
+                  required: "Field can't be empty",
+                  message: "Enter a message",
+                })}
                 placeholder={`Message*`}
                 _placeholder={{ opacity: 0.5, color: `#000` }}
                 fontSize={[`1.2rem`, `2rem`]}
                 fontWeight={400}
                 lineHeight={[`1.406rem`, `2.344rem`]}
-                marginTop={`3rem`}
                 w={[`24.25rem`, `81.3rem`]}
                 h={[`11.15rem`, `20rem`]}
                 outline={`1px solid #2f98c2`}
@@ -273,6 +364,7 @@ const ContactUs = () => {
               top={[`-2rem`, `-3rem`]}
               _hover={{ bg: `#2f98c2` }}
               zIndex={1}
+              type={`submit`}
             >
               Send Message
             </Button>
@@ -310,41 +402,55 @@ const ContactUs = () => {
             </Text>
           </Box>
 
-          <Box display={`flex`} justifyContent={`center`} alignItems={`center`}>
-            <Box>
-              <Input
-                type={`email`}
-                name={`email`}
-                placeholder={`Type Email Address`}
+          {/* <Box display={`flex`} justifyContent={`center`} alignItems={`center`}>
+            <FormControl display={`flex`} 
+            onSubmit={handleSubmit(onSubmitForm)}
+            as={`form`}
+            >
+              <Box>
+                <Input
+                  type={`email`}
+                  name={`Email`}
+                  {...register("Email", {
+                    required: "Enter email address",
+                    pattern: {
+                      value: /^[^@]+@[^@]+\.[^@ .]{2,}$/,
+                      message: "Email is not valid.", 
+                    }
+                  })}
+                  placeholder={`Type Email Address`}
+                  fontSize={[`1.2rem`, `2rem`]}
+                  fontWeight={400}
+                  lineHeight={[`1.589rem`, `2.644rem`]}
+                  textIndent={`1rem`}
+                  borderRadius={[`1rem`, `2rem`]}
+                  border={`1px solid #2F98C2`}
+                  w={[`24rem`, `46.3rem`]}
+                  h={[`3.9rem`, `6.1rem`]}
+                />
+                <Text color={`red`} m={`.5rem`} fontSize={[`1.2rem`, `1.6rem`]}>{errors?.email?.message}</Text>
+              </Box>
+
+              <Button
                 fontSize={[`1.2rem`, `2rem`]}
-                fontWeight={400}
-                lineHeight={[`1.589rem`, `2.644rem`]}
-                textIndent={`1rem`}
+                fontWeight={500}
+                lineHeight={[`1.589rem`, `2.6rem`]}
+                bgGradient="linear(123.09deg, #2f98c2 -7.49%, #1e3673 78.8%)"
+                color={`white`}
                 borderRadius={[`1rem`, `2rem`]}
                 border={`1px solid #2F98C2`}
-                w={[`24rem`, `46.3rem`]}
-                h={[`3.9rem`, `6.1rem`]}
-              />
-            </Box>
-
-            <Button
-              fontSize={[`1.2rem`, `2rem`]}
-              fontWeight={500}
-              lineHeight={[`1.589rem`, `2.6rem`]}
-              bgGradient="linear(123.09deg, #2f98c2 -7.49%, #1e3673 78.8%)"
-              color={`white`}
-              borderRadius={[`1rem`, `2rem`]}
-              border={`1px solid #2F98C2`}
-              w={[`10.8rem`, `17.5rem`]}
-              h={[`3.9rem`, `6.2rem`]}
-              position={`relative`}
-              right={[`1rem`, `3rem`]}
-              _hover={{ bg: `#1e3673` }}
-              // zIndex={-1}
-            >
-              Subscribe
-            </Button>
-          </Box>
+                w={[`10.8rem`, `17.5rem`]}
+                h={[`3.9rem`, `6.2rem`]}
+                position={`relative`}
+                right={[`1rem`, `3rem`]}
+                _hover={{ bg: `#1e3673` }}
+                type={`submit`}
+                // zIndex={-1}
+              >
+                Subscribe
+              </Button>
+            </FormControl>
+          </Box> */}
         </Flex>
       </Box>
     </Layout>

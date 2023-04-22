@@ -33,8 +33,7 @@ const AboutHeader = () => {
         Health is most important in your daily life. We
         <br /> strive to offer nothing but quality healthcare.
         <br /> You are rest assured your wellbeing and health
-        <br />
-        are in safe hands.
+        <br /> are in safe hands.
       </Text>
       <Button
         rightIcon={<BiChevronRight />}
@@ -46,6 +45,7 @@ const AboutHeader = () => {
         lineHeight={[`1.406rem`, `2.3rem`]}
         margin={`2rem 0`}
         color={`#1E3673`}
+        _hover={{ bg: `#1E3673`, color: `#fff`}}
       >
         Find a Doctor
       </Button>

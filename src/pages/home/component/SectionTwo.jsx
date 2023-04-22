@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const SectionTwo = () => {
   return (
-    <section className="sectionTwo container section__padding">
+    <section className="sectionTwo  section__padding">
       <div className="sectionTwo-content">
         <div className="sectionTwo-content-image">
           <img src={Vaccine} alt={`Vaccine`} />

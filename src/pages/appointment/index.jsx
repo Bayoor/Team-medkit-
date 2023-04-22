@@ -7,11 +7,15 @@ import {
   Input,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import React, {useState, useEffect} from "react";
+import { useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import AppointmentLayout from "../../layout/AppointmentLayout";
 import line from "../../assets/icons/line_1.svg";
 import Doc from "../../assets/images/doc3.png";
+import AppointmentModal from "../../Modals/AppointmentModal";
+
+
 
 const Appointment = () => {
   const {
@@ -20,16 +24,46 @@ const Appointment = () => {
     formState: { errors },
     reset,
   } = useForm();
-
- 
-
+  
+  
+  
   const handleSubmitForm = (data) => {
     reset();
     console.log(data);
   };
 
+  const location = useLocation();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (location.search === "?showModal=true") {
+      setIsModalOpen(true);
+    }
+  }, [location.search]);
+
+  const handleButtonClick = () => {
+    setIsModalOpen(true);
+  };
+
+  // const AppointmentModalWithRouter = withRouter(AppointmentModal);
+ 
+
+  // const history = useHistory();
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+
+
+  
+ 
   return (
+    
     <AppointmentLayout>
+
+
+      <AppointmentModal isOpen={isModalOpen} onClose={handleCloseModal}/>
       <Flex
         justifyContent={`center`}
         alignItems={`center`}
@@ -217,7 +251,8 @@ const Appointment = () => {
                 color={`#fff`}
                 bgColor={`#2f98c2`}
                 borderRadius={[`2rem`, `5rem`]}
-                type={`submit`}
+                // type={`submit`}
+                onClick={handleButtonClick}
               >
                 REQUEST
               </Button>
@@ -226,7 +261,7 @@ const Appointment = () => {
         </Box>
 
         <Box
-          display={[`none`, `flex`]}
+          display={[`none`, `none`, `none`, `flex`]}
           flexDir={`row`}
           justifyContent={`center`}
           alignItems={`center`}
@@ -238,5 +273,6 @@ const Appointment = () => {
     </AppointmentLayout>
   );
 };
+
 
 export default Appointment;

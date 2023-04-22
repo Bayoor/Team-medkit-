@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import "../NavBar/navbar-module.scss";
 import { FaTimes, FaBars } from "react-icons/fa";
 import logo from "../../assets/icons/logo.svg";
@@ -8,22 +8,30 @@ import logo from "../../assets/icons/logo.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const [whenActive, setWhenActive] = useState(0);
+
+  // const isActive = (index)=> {
+  //   setIsOpen(index)
+
+  // }
+  // const location = useLocation();
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
 
-  useEffect(() => {
-    console.log(location);
-  }, [location]);
+  // useEffect(() => {
+  //   console.log(location);
+  // }, [location]);
 
-  const setActiveState = (route) => {
-    return location.pathname.includes(route);
+  const setActiveState = (index) => {
+    setWhenActive(index)
+
+    // return location.pathname.includes(route);
   };
 
   return (
-    <nav className="Navbar container section__padding">
+    <nav className="Navbar section__padding" >
       <div className="Navbar-content">
         <img className="Navbar-logo" src={logo} alt="Logo" />
         <div className="Navbar-text">
@@ -34,55 +42,64 @@ const Navbar = () => {
         </div>
       </div>
 
-      <ul className={isOpen ? "Navbar-menu open" : "Navbar-menu"}>
+      <ul className={isOpen ? "Navbar-menu open" : "Navbar-menu"} onClick={() => toggleNavbar()}>
         <div className="Navbar-links">
           <li>
-            <Link className={setActiveState(`/`) ? `active` : null} to={`/`}>
+            <NavLink className={whenActive == 1 ? `active` : ''}
+             onClick={() => setActiveState(1)} 
+            to={`/`}>
               HOME
-            </Link>
+            </NavLink>
           </li>
-          <li>
-            <Link
-              className={setActiveState(`/about`) ? `active` : null}
+          <li className={whenActive == 2 ? `active` : ''}
+              onClick={() => setActiveState(2)}
+              to={`/about`}>
+            <NavLink
+              className={whenActive == 2 ? `active` : ''}
+              onClick={() => setActiveState(2)}
               to={`/about`}
             >
               ABOUT
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
-              className={setActiveState(`/services`) ? `active` : null}
+            <NavLink
+              className={whenActive == 3 ? `active` : ''}
+              onClick={() => setActiveState(3)}
               to={`/services`}
             >
               SERVICES
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
-              className={setActiveState(`/contact`) ? `active` : null}
+            <NavLink
+              className={whenActive == 4 ? `active` : ''}
+              onClick={() => setActiveState(4)}
               to={`/contact`}
             >
               CONTACT
-            </Link>
+            </NavLink>
           </li>
         </div>
 
         <div className="Navbar-auth">
           <li>
-            <Link
-              className={setActiveState(`/login`) ? `active` : null}
+            <NavLink
+              className={whenActive == 5 ? `active` : ''} 
+              onClick={() => setActiveState(5)}
               to={`/login`}
             >
               Log In
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
-              className={setActiveState(`/signup`) ? `active` : null}
+            <NavLink
+              className={whenActive == 6 ? `active` : ''} 
+              onClick={() => setActiveState(6)}
               to={`/signup`}
             >
               <button>Sign Up</button>
-            </Link>
+            </NavLink>
           </li>
         </div>
       </ul>
@@ -92,14 +109,14 @@ const Navbar = () => {
         onFocus={() => {
           setIsOpen(true);
         }}
-        onBlur={() => {
-          setIsOpen(false);
-        }}
+        // onBlur={() => {
+        //  setIsOpen(false)
+        // }}
       >
         {isOpen ? (
-        null
-        ) : (
-          <FaBars size={24} color={`#2f98c2`} padding={`1rem`}/>
+          null
+          ) : (
+            <FaBars size={24} color={`#2f98c2`} padding={`1rem`}/>
         )}
       </button>
     </nav>

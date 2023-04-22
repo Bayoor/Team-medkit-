@@ -27,15 +27,16 @@ const theme = extendTheme({
         },
         control: {
           border: '2px solid black',
-          borderColor: 'gray.300',
+          borderColor: '#2f98c2',
           borderRadius: 'base',
           _disabled: {
             borderColor: 'gray.300',
             bg: 'gray.200',
           },
           _hover: {
-            border: `1px solid #84CAFF`,
-            boxShadow: `0px 0px 0px 4px #D1E9FF`,
+            border: `1px solid #2f98c2`,
+            boxShadow: `0px 0px 0px 4px #1e3637`,
+            bgColor: '#2f98c2'
           },
         },
         label: {

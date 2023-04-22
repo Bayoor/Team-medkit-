@@ -9,9 +9,12 @@ import chat from "../../../assets/icons/chat.svg";
 import call from "../../../assets/icons/call.svg";
 import Live_Chat from "../../../assets/icons/Live_Chat.svg";
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+
 const SectionFour = () => {
   return (
-    <section className="SectionFour container section__padding">
+    <section className="SectionFour section__padding">
       <div className="SectionFour-wrapper">
         <h2>MEET OUR DOCTORS</h2>
         <img src={line} alt={`Line`} />
@@ -67,6 +70,70 @@ const SectionFour = () => {
         </div>
       </div>
 
+      <div className="swipper">
+      <Swiper
+        slidesPerView={`auto`}
+        spaceBetween={1}
+        centeredSlides={true}
+
+       
+      >
+        <SwiperSlide>
+          <div pipper-content>
+          <img src={people} alt={`Picture of a bus`} />
+          <h2>Dr. Jay Stephen</h2>
+          <p>Optometrist</p>
+          </div>
+
+          <div className="micons">
+            <img src={chat} alt="social_icon" />
+            <img src={call} alt="social_icon" />
+            <img src={Live_Chat} alt="social_icon" />
+          </div>
+
+        </SwiperSlide>
+            
+        <SwiperSlide>
+        <img src={people_1} alt={`Avatar`} />
+          <h2>Dr. Ajay Verma</h2>
+          <p>Gynecologist</p>
+
+          <div className="micons">
+            <img src={chat} alt="social_icon" />
+            <img src={call} alt="social_icon" />
+            <img src={Live_Chat} alt="social_icon" />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+        <img src={people_2} alt={`Picture of a clock`} />
+          <h2>Dr. Aisha Joe</h2>
+          <p>Paediatrician</p>
+
+          <div className="micons">
+            <img src={chat} alt="social_icon" />
+            <img src={call} alt="social_icon" />
+            <img src={Live_Chat} alt="social_icon" />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+        <img src={people_3} alt={`Picture of a clock`} />
+          <h2>Dr. Stella Maris</h2>
+          <p>General Physician</p>
+
+          <div className="micons">
+            <img src={chat} alt="social_icon" />
+            <img src={call} alt="social_icon" />
+            <img src={Live_Chat} alt="social_icon" />
+          </div>
+        </SwiperSlide>
+
+      </Swiper>
+
+      </div>
+
+      
       <div className="SectionFour-header">
         <h2>Patients Say</h2>
         <div className="SectionFour-heading">
@@ -82,8 +149,8 @@ const SectionFour = () => {
             <p>
               “My treatment was second to none and the staffs of Medkit were
               polite and caring”
-            </p><br/>
-              <p className="SectionFour-para span">Elo Zona</p>
+            </p>
+              <p className="SectionFour-para space">Elo Zona</p>
           </div>
         </div>
       </div>
