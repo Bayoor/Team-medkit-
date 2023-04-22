@@ -58,7 +58,7 @@
   color: colors.$white;
 }
 
-@media only screen and (max-width: 102.3rem) {
+@media only screen and (max-width: 48rem) {
   .sectionTwo-content {
     flex-direction: column;
   }
@@ -69,12 +69,13 @@
     margin-right: 0;
   }
 
+ 
   .sectionTwo-content-image img {
     margin-bottom: 2rem;
   }
 }
 
-@media screen and (max-width: 76.8rem) {
+@media screen and (max-width: 40rem) {
   .sectionTwo {
     padding: 1rem 3rem;
   }

@@ -160,6 +160,13 @@ const SectionFour = () => {
       </div>
 
 
+      <div className="SectionFour-background">
+        <h2>We Operate 24h a day  - 7 days a week!</h2>
+        <p>REPORT A PROBLEM</p>
+
+      </div>
+
+
     </section>
   );
 };
