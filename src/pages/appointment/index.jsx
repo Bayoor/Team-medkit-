@@ -13,7 +13,7 @@ import { useForm } from "react-hook-form";
 import AppointmentLayout from "../../layout/AppointmentLayout";
 import line from "../../assets/icons/line_1.svg";
 import Doc from "../../assets/images/doc3.png";
-import AppointmentModal from "../../Modals/AppointmentModal";
+import AppointmentModal from "../../components/Modals/AppointmentModal";
 
 
 
@@ -24,9 +24,9 @@ const Appointment = () => {
     formState: { errors },
     reset,
   } = useForm();
-  
-  
-  
+
+
+
   const handleSubmitForm = (data) => {
     reset();
     console.log(data);
@@ -46,7 +46,7 @@ const Appointment = () => {
   };
 
   // const AppointmentModalWithRouter = withRouter(AppointmentModal);
- 
+
 
   // const history = useHistory();
 
@@ -56,10 +56,10 @@ const Appointment = () => {
 
 
 
-  
- 
+
+
   return (
-    
+
     <AppointmentLayout>
 
 

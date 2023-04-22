@@ -6,14 +6,18 @@ import { Link } from "react-router-dom";
 
 const SectionOne = () => {
   return (
-    <section className="hero section__padding ">
+    <section className="hero section__padding cc-container">
       <div className="hero-content ">
         <div className="hero-image">
           <img src={Doc} alt={`Doc`} />
         </div>
 
         <div className="hero-text">
-          <h2> Get Access to Quick and<br/> Confidential Medical Services</h2>
+          <h2>
+            {" "}
+            Get Access to Quick and
+            <br /> Confidential Medical Services
+          </h2>
 
           <p>
             Lorem ipsum dolor sit amet consectetur. Ante est ulmcorper nullam
@@ -26,7 +30,9 @@ const SectionOne = () => {
           <div className="hero-service">
             <h2>Dr. Raj Spencer</h2>
             <span>Consultant</span>
-            <button><Link to={`/appointment`}>Book Appointment</Link></button>
+            <button>
+              <Link to={`/appointment`}>Book Appointment</Link>
+            </button>
           </div>
         </div>
       </div>
@@ -35,5 +41,3 @@ const SectionOne = () => {
 };
 
 export default SectionOne;
-
-

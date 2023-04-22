@@ -1,12 +1,15 @@
 @use "../../style/scss/global/colors" as colors;
 
 .footer {
-  display: flex;
-  justify-content: space-around;
-  align-items: inherit;
   background-color: colors.$secondary;
   color: colors.$white;
   padding: 6rem 2rem;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: inherit;
 }
 
 .footer__content-item {
@@ -108,8 +111,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: .5rem 0;
-   
+    padding: 0.5rem 0;
+
     margin-bottom: 1rem;
   }
 
@@ -118,14 +121,10 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
-    margin: .5rem 0;
+    margin: 0.5rem 0;
   }
 
-  
-
- 
-
-   .span {
+  .span {
     display: flex;
     flex-direction: row;
     justify-content: center;

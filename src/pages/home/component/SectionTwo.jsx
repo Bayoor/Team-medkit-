@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const SectionTwo = () => {
   return (
     <section className="sectionTwo  section__padding">
-      <div className="sectionTwo-content">
+      <div className="sectionTwo-content cc-container">
         <div className="sectionTwo-content-image">
           <img src={Vaccine} alt={`Vaccine`} />
         </div>
@@ -31,7 +31,9 @@ const SectionTwo = () => {
             felis tincidunt. Aenean enim sed pellentesque arcu. Lorem posuere
             elit est in interdum tempus.
           </p>
-          <button><Link to={`/login`}>Register Now</Link></button>
+          <button>
+            <Link to={`/login`}>Register Now</Link>
+          </button>
         </div>
       </div>
     </section>
