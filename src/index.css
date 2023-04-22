@@ -1,4 +1,5 @@
 :root {
+<<<<<<< HEAD
     font-size: 62.5%;
     
 }
@@ -26,10 +27,49 @@ body {
     margin: 0 auto;
     
     
+=======
+  font-size: 62.5%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  /* max-width: 1440px;
+    width: 100%; */
+
+  /* font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%; */
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  scroll-behavior: smooth;
+  /* outline: 1px solid red; */
+  /* box-shadow: 0 0 0 1px #f00; */
+}
+
+body {
+  font-size: 1.6rem;
+  display: grid;
+  align-items: center;
+  flex-wrap: wrap;
+  min-width: 0;
+  min-height: 0;
+>>>>>>> 5aea407a03ffe3aeabe4507679fb40d98a8703f1
 }
 
 li,
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
+.cc-container {
+  width: 100%;
+  max-width: 1440px;
+  /* max-width: 1240px; */
+  margin: 0 auto;
+}

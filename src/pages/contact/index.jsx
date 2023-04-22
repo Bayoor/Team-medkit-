@@ -31,14 +31,14 @@ const ContactUs = () => {
 
   const navigate = useNavigate();
 
-  const toast = useToast({position: `top`});
+  const toast = useToast({ position: `top` });
 
   const handleSubmitForm = async (data) => {
-    try{
-      const response= await axios.post(
+    try {
+      const response = await axios.post(
         `https://medkit.onrender.com/messages`,
         data
-      )
+      );
       console.log(response);
       toast({
         title: "Successful",
@@ -60,14 +60,10 @@ const ContactUs = () => {
       });
     }
   };
-    
-
-    
-  
 
   const onSubmitForm = (data) => {
     console.log(data);
-  }
+  };
 
   return (
     <Layout>
@@ -94,6 +90,7 @@ const ContactUs = () => {
         </Box>
 
         <Flex
+          className="cc-container"
           justifyContent={`space-evenly`}
           alignItems={`center`}
           position={`relative`}
@@ -206,11 +203,12 @@ const ContactUs = () => {
           </Box>
         </Flex>
 
-        <Box marginBottom={`5rem`}>
+        <Box className="cc-container" marginBottom={`5rem`}>
           <Image src={map} alt={`A map`} />
         </Box>
 
         <Box
+          className="cc-container"
           display={`flex`}
           flexDir={`column`}
           justifyContent={`center`}
@@ -218,7 +216,7 @@ const ContactUs = () => {
           padding={[`3rem 0`, `6rem 0`]}
           bgColor={`#f5f5f5`}
           borderRadius={`2rem`}
-          margin={[`0 2.9rem`, `0 10rem`]}
+          // margin={[`0 2.9rem`, `0 10rem`]}
           position={`relative`}
           top={[`-7rem`, `-12.8rem`]}
         >
@@ -372,6 +370,7 @@ const ContactUs = () => {
         </Box>
 
         <Flex
+          className="cc-container"
           flexDir={[`column`, `row`]}
           justifyContent={`space-around`}
           alignItems={`center`}
@@ -403,7 +402,7 @@ const ContactUs = () => {
           </Box>
 
           {/* <Box display={`flex`} justifyContent={`center`} alignItems={`center`}>
-            <FormControl display={`flex`} 
+            <FormControl display={`flex`}
             onSubmit={handleSubmit(onSubmitForm)}
             as={`form`}
             >
@@ -415,7 +414,7 @@ const ContactUs = () => {
                     required: "Enter email address",
                     pattern: {
                       value: /^[^@]+@[^@]+\.[^@ .]{2,}$/,
-                      message: "Email is not valid.", 
+                      message: "Email is not valid.",
                     }
                   })}
                   placeholder={`Type Email Address`}
