@@ -71,9 +71,10 @@
   margin-top: 1.5rem;
 }
 
-@media only screen and (max-width: 40rem) {
+@media only screen and (max-width: 768px) {
   .SectionThree {
     padding: 1rem 3rem;
+    margin-top: -1rem;
   }
 
   .SectionThree-wrapper h2 {
@@ -91,6 +92,9 @@
 
   .SectionThree-content {
     width: 100%;
+    margin-bottom: 1rem;
+    padding: 3rem 0;
+    margin-top: -6rem;
   }
 
   .SectionThree-content h2 {
@@ -103,7 +107,17 @@
     line-height: 132.19%;
   }
 
-  .SectionThree-border {
+  .first,
+  .second {
+    padding: 0 2rem;
+  }
+
+  .second {
     border: none;
+    
+  }
+
+  .third img {
+    margin-top: -1.5rem;
   }
 }

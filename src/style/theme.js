@@ -19,6 +19,9 @@ const theme = extendTheme({
     '2xl': '1440px', //1440
   },
 
+  
+  
+
   components: {
     Checkbox: {
       baseStyle: {
@@ -65,6 +68,7 @@ const theme = extendTheme({
     // accentBlue: `#caf2fe`,
     // accentRed: `#ffcfcf`,
   },
+ 
   fontSizes: {
     xs: '0.75rem',
     sm: '0.875rem',

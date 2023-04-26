@@ -11,6 +11,7 @@ import Live_Chat from "../../../assets/icons/Live_Chat.svg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { Link } from "react-router-dom";
 
 const SectionFour = () => {
   return (
@@ -28,9 +29,9 @@ const SectionFour = () => {
             <p>Optometrist</p>
 
             <div className="icons">
-              <img src={chat} alt="social_icon" />
-              <img src={call} alt="social_icon" />
-              <img src={Live_Chat} alt="social_icon" />
+            <Link to={`/404page`}><img src={chat} alt="social_icon" /></Link>
+              <Link to={`/404page`}><img src={call} alt="social_icon" /></Link>
+              <Link to={`/404page`}><img src={Live_Chat} alt="social_icon" /></Link>
             </div>
           </div>
 
@@ -40,9 +41,9 @@ const SectionFour = () => {
             <p>Gynecologist</p>
 
             <div className="icons">
-              <img src={chat} alt="social_icon" />
-              <img src={call} alt="social_icon" />
-              <img src={Live_Chat} alt="social_icon" />
+            <Link to={`/404page`}><img src={chat} alt="social_icon" /></Link>
+              <Link to={`/404page`}><img src={call} alt="social_icon" /></Link>
+              <Link to={`/404page`}><img src={Live_Chat} alt="social_icon" /></Link>
             </div>
           </div>
 
@@ -52,9 +53,12 @@ const SectionFour = () => {
             <p>Paediatrician</p>
 
             <div className="icons">
-              <img src={chat} alt="social_icon" />
-              <img src={call} alt="social_icon" />
-              <img src={Live_Chat} alt="social_icon" />
+              <Link to={`/404page`}><img src={chat} alt="social_icon" /></Link>
+              <Link to={`/404page`}><img src={call} alt="social_icon" /></Link>
+              <Link to={`/404page`}><img src={Live_Chat} alt="social_icon" /></Link>
+              
+             
+              
             </div>
           </div>
 
@@ -64,9 +68,9 @@ const SectionFour = () => {
             <p>General Physician</p>
 
             <div className="icons">
-              <img src={chat} alt="social_icon" />
-              <img src={call} alt="social_icon" />
-              <img src={Live_Chat} alt="social_icon" />
+            <Link to={`/404page`}><img src={chat} alt="social_icon" /></Link>
+              <Link to={`/404page`}><img src={call} alt="social_icon" /></Link>
+              <Link to={`/404page`}><img src={Live_Chat} alt="social_icon" /></Link>
             </div>
           </div>
         </div>
@@ -74,52 +78,61 @@ const SectionFour = () => {
         <div className="swipper">
           <Swiper slidesPerView={`auto`} spaceBetween={1} centeredSlides={true}>
             <SwiperSlide>
-              <div pipper-content>
+              <div className="pipper-content">
                 <img src={people} alt={`Picture of a bus`} />
                 <h2>Dr. Jay Stephen</h2>
                 <p>Optometrist</p>
               </div>
 
               <div className="micons">
-                <img src={chat} alt="social_icon" />
-                <img src={call} alt="social_icon" />
-                <img src={Live_Chat} alt="social_icon" />
+              <Link to={`/404page`}><img src={chat} alt="social_icon" /></Link>
+              <Link to={`/404page`}><img src={call} alt="social_icon" /></Link>
+              <Link to={`/404page`}><img src={Live_Chat} alt="social_icon" /></Link>
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
+              <div className="pipper-content">
               <img src={people_1} alt={`Avatar`} />
               <h2>Dr. Ajay Verma</h2>
               <p>Gynecologist</p>
 
+              </div>
+
               <div className="micons">
-                <img src={chat} alt="social_icon" />
-                <img src={call} alt="social_icon" />
-                <img src={Live_Chat} alt="social_icon" />
+              <Link to={`/404page`}><img src={chat} alt="social_icon" /></Link>
+              <Link to={`/404page`}><img src={call} alt="social_icon" /></Link>
+              <Link to={`/404page`}><img src={Live_Chat} alt="social_icon" /></Link>
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
+              <div className="pipper-content">
               <img src={people_2} alt={`Picture of a clock`} />
               <h2>Dr. Aisha Joe</h2>
               <p>Paediatrician</p>
 
+              </div>
+
               <div className="micons">
-                <img src={chat} alt="social_icon" />
-                <img src={call} alt="social_icon" />
-                <img src={Live_Chat} alt="social_icon" />
+              <Link to={`/404page`}><img src={chat} alt="social_icon" /></Link>
+              <Link to={`/404page`}><img src={call} alt="social_icon" /></Link>
+              <Link to={`/404page`}><img src={Live_Chat} alt="social_icon" /></Link>
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
+              <div className="pipper-content">
               <img src={people_3} alt={`Picture of a clock`} />
               <h2>Dr. Stella Maris</h2>
               <p>General Physician</p>
 
+              </div>
+
               <div className="micons">
-                <img src={chat} alt="social_icon" />
-                <img src={call} alt="social_icon" />
-                <img src={Live_Chat} alt="social_icon" />
+              <Link to={`/404page`}><img src={chat} alt="social_icon" /></Link>
+              <Link to={`/404page`}><img src={call} alt="social_icon" /></Link>
+              <Link to={`/404page`}><img src={Live_Chat} alt="social_icon" /></Link>
               </div>
             </SwiperSlide>
           </Swiper>
@@ -146,15 +159,16 @@ const SectionFour = () => {
           </div>
         </div>
 
-        <div className="SectionFour-wrapper">
+        <div className="SectionFour-wrapper mobile">
           <img src={line} alt={`Line`} />
         </div>
 
+      </div>
         <div className="SectionFour-background">
           <h2>We Operate 24h a day - 7 days a week!</h2>
-          <p>REPORT A PROBLEM</p>
+          <p ><Link to={`/404page`}>REPORT A PROBLEM</Link></p>
         </div>
-      </div>
+
     </section>
   );
 };

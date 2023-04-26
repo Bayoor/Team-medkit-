@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 const SectionOne = () => {
   return (
-    <section className="hero section__padding cc-container">
-      <div className="hero-content ">
+    <section className="hero section__padding ">
+      <div className="hero-content cc-container ">
         <div className="hero-image">
           <img src={Doc} alt={`Doc`} />
         </div>
@@ -25,7 +25,7 @@ const SectionOne = () => {
             et adipiscing sociis commodo sit sem. Ac fusce vel facilisis
             pellentesque aliquam elentum. Massa morbi phasellus viverra nisi id.
           </p>
-          <button>Get Started</button>
+          <button><Link to={`/404page`}>Get Started</Link></button>
 
           <div className="hero-service">
             <h2>Dr. Raj Spencer</h2>

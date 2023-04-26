@@ -8,51 +8,13 @@ import gynecology from "../../../assets/images/gynecology.png";
 import paediatrics from "../../../assets/images/paediatrics.png";
 import optometry from "../../../assets/images/optometry.png";
 import physician from "../../../assets/images/physician.png";
-import service_bg from "../../../assets/images/service_bg.png";
+// import service_bg from "../../../assets/images/service_bg.png";
 
 const ServicesHeader = () => {
   return (
-    <Box bgColor={`#DEF1F9`}>
-      <Box
-        // className="section__padding"
-        //   outline={`1px solid red`}
-        className="cc-container"
-        padding={[`1rem 3rem`, `1rem 6rem`]}
-        bgImage={service_bg}
-        bgRepeat={`no-repeat`}
-      >
-        <Box
-          display={`flex`}
-          flexDir={`column`}
-          justifyContent={[`center`]}
-          alignItems={[`center`]}
-          padding={`8rem 0`}
-          // outline={`1px solid blue`}
-          // padding={`3rem 38rem`}
-          w={[`100%`, `40%`]}
-          margin={`8rem auto`}
-          marginBottom={`12rem`}
-        >
-          <Heading
-            color={`#2f98c2`}
-            fontSize={`3.2rem`}
-            fontWeight={700}
-            lineHeight={`4.3rem`}
-          >
-            Services
-          </Heading>
-          <Text
-            fontSize={[`1.2rem`, `1.6rem`, `2rem`]}
-            fontWeight={400}
-            lineHeight={[`1.61rem`, `2.684rem`]}
-            marginTop={[`1rem`, `3rem`]}
-            textAlign={[`center`]}
-          >
-            Lorem ipsum dolor sit amet consectetur. Ac tellus sed proin
-            ullamcorper arcu ut eget augue. Fermentum eget id massa morbi risus.
-          </Text>
-        </Box>
+    <Box bgColor={`#DEF1F9`} padding={[`1rem 3rem`, `1rem 6rem`]} >
 
+      <Box className="cc-container" mt={{base: `-6rem`, md: `0`}}>
         <Box marginTop={`6rem`}>
           <Box
             display={`grid`}
@@ -62,7 +24,7 @@ const ServicesHeader = () => {
             gap={[`3rem`, `10rem`]}
             padding={`2rem 0`}
           >
-            <Box>
+            <Box mt={{base:`-6rem`, md: `0`}}>
               <Image src={line} alt={`A  shot straight`} margin={`2rem 0`} />
               <Heading
                 fontSize={[`1.8rem`, `3.2rem`]}

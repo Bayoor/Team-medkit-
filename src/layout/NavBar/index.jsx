@@ -31,7 +31,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="Navbar section__padding" >
+    <nav className="Navbar section__padding cc-container" >
       <div className="Navbar-content">
         <img className="Navbar-logo" src={logo} alt="Logo" />
         <div className="Navbar-text">

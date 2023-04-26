@@ -23,6 +23,8 @@ import people_4 from "../../assets/images/people_4.png";
 const LogIn = () => {
   const navigate = useNavigate();
 
+  const baseUrl=  `https://medkit.onrender.com/login`
+
   const {
     register,
     handleSubmit,
@@ -31,14 +33,23 @@ const LogIn = () => {
 
   const toast = useToast({ position: " top" });
 
+  const [isLoading, setIsLoading] = React.useState(false);
+
   const handleSubmitForm = async (data) => {
     // reset();
     // console.log(data);
-    try {
+    try { 
+      setIsLoading(true);
+
       const response = await axios.post(
-        `https://medkit.onrender.com/login`,
-        data
+        baseUrl, data,  {
+          headers: { "Content-Type": "application/json"} ,
+        }
       );
+      if(response.data.token) {
+        localStorage.setItem("token", response.data.token)
+        // localStorage.Item("token", response.data.token)
+      }
       console.log(response);
       toast({
         title: "Successful",
@@ -59,13 +70,18 @@ const LogIn = () => {
         isClosable: true,
       });
     }
+
+    setIsLoading(false);
   };
 
   return (
-    <Flex
+    <Box  bgColor={`#def1f9`} p={{base: `1rem 2.5rem`, lg: `1rem 6rem`}}>
+
+
+<Flex
       justifyContent={`space-around`}
-      className="section__padding"
-      bgColor={`#def1f9`}
+      className={`cc-container`}
+     
       paddingTop={`5rem`}
       paddingBottom={`5rem`}
     >
@@ -269,6 +285,11 @@ const LogIn = () => {
               textAlign={`center`}
               color={`#fff`}
               type="submit"
+              isLoading={isLoading}
+              loadingText="Loging In"
+              // colorScheme='teal'
+              variant="outline"
+              _hover={{ bg: `#1e3542`, opacity: 1 }}
             >
               Log In
             </Button>
@@ -307,6 +328,12 @@ const LogIn = () => {
         />
       </Box>
     </Flex>
+
+
+
+    </Box>
+
+   
   );
 };
 

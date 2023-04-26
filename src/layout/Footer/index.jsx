@@ -14,12 +14,12 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <section className="footer">
-      <div className="cc-container footer-wrapper">
+      <div className="cc-container footer-wrapper  section__padding">
         <div className="footer__content">
           <div className="footer__content-item">
             <img className="footer-logo" src={logo} alt="Logo" />
             <div className="footer-text">
-              <h2>MEDKIT.COM</h2>
+              <h2><Link to={`/`}>MEDKIT.COM</Link></h2>
               <p>Health is wealth</p>
             </div>
           </div>
@@ -33,27 +33,29 @@ const Footer = () => {
           </div>
 
           <div className="footer__icons">
-            <img src={Twitter} alt={`Twitter icon`} />
-            <img src={Facebook} alt={`Facebook icon`} />
-            <img src={Instagram} alt={`Instagram icon`} />
+          <Link to={`/404page`}> <img src={Twitter} alt={`Twitter icon`} /></Link>
+          <Link to={`/404page`}> <img src={Facebook} alt={`Facebook icon`} /></Link>
+          <Link to={`/404page`}> <img src={Instagram} alt={`Instagram icon`} /></Link>
           </div>
         </div>
 
         <div className="footer__content">
-          <h2>Information</h2>
-          <p>Blog</p>
-          <p>Special Offers</p>
-          <p>F.A.Q</p>
-          <p>Privacy Policy</p>
-          <p>Terms and Conditions</p>
+         <h2><Link to={`/404page`}>Information</Link></h2>
+         <p><Link to={`/404page`}>Blog</Link></p>
+         <p><Link to={`/404page`}>Special Offers</Link></p>
+         <p><Link to={`/404page`}>F.A.Q</Link></p>
+         <p><Link to={`/404page`}>Privacy Policy</Link></p>
+         <p><Link to={`/404page`}>Terms and Conditions</Link></p>
+         
+        
         </div>
 
         <div className="footer__content">
-          <h2>Quick Links</h2>
+        <h2><Link to={`/404page`}>Quick Links</Link></h2>
           <p>
             <Link to={`/appointment`}>Book an Appointment</Link>
           </p>
-          <p>Free Consultation</p>
+          <p><Link to={`/404page`}>Free Consultation</Link></p>
         </div>
 
         <div className="footer__content">
@@ -61,23 +63,23 @@ const Footer = () => {
           <p>
             <Link to={`/about`}>About Us</Link>
           </p>
-          <p>Help Center</p>
-          <p>Privacy Policy</p>
+          <p><Link to={`/404page`}>Help Center</Link></p>
+          <p><Link to={`/404page`}>Privacy Policy</Link></p>
         </div>
 
         <div className="footer__mobile-content">
-          <p>Find & follow us</p>
-
+        <p><Link to={`/404page`}>Find & follow us</Link></p>
+         
           <div className="footer__mobile-icons">
-            <img src={Twitter} alt={`Twitter icon`} />
-            <img src={Facebook} alt={`Facebook icon`} />
-            <img src={Instagram} alt={`Instagram icon`} />
+            <Link to={`/404page`}> <img src={Twitter} alt={`Twitter icon`} /></Link>
+            <Link to={`/404page`}> <img src={Facebook} alt={`Facebook icon`} /></Link>
+          <Link to={`/404page`}> <img src={Instagram} alt={`Instagram icon`} /></Link>
           </div>
 
           <div className="footer__mobile-contact">
-            <p>Tel: (233) 678-0202</p>
-            <p>Fax: 0300000025</p>
-            <p>Email: medkit@gmail.com</p>
+          <p><Link to={`/404page`}>Tel: (233) 678-0202</Link></p>
+          <p><Link to={`/404page`}>Fax: 0300000025</Link></p>
+          <p><Link to={`/404page`}>Email: medkit@gmail.com</Link></p>
           </div>
           <hr />
 
