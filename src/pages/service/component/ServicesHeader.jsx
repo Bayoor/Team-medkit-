@@ -12,20 +12,20 @@ import physician from "../../../assets/images/physician.png";
 
 const ServicesHeader = () => {
   return (
-    <Box bgColor={`#DEF1F9`} padding={[`1rem 3rem`, `1rem 6rem`]} >
+    <Box bgColor={`#DEF1F9`} padding={[`1rem 2.5rem`, `1rem 6rem`]} >
 
-      <Box className="cc-container" mt={{base: `-6rem`, md: `0`}}>
-        <Box marginTop={`6rem`}>
+      <Box className="cc-container" >
+        <Box >
           <Box
             display={`grid`}
             gridTemplateColumns={`repeat(2,1fr)`}
             justifyContent={`center`}
             alignItems={`center`}
-            gap={[`3rem`, `10rem`]}
-            padding={`2rem 0`}
+            gap={[`1.6rem`, `10rem`]}
+           
           >
-            <Box mt={{base:`-6rem`, md: `0`}}>
-              <Image src={line} alt={`A  shot straight`} margin={`2rem 0`} />
+            <Box>
+              <Image src={line} alt={`A  shot straight`} w={{base: `3.5rem`, lg:`7rem`}}  mt={{base:`-6rem`, md: `18.5rem`}} />
               <Heading
                 fontSize={[`1.8rem`, `3.2rem`]}
                 fontWeight={600}
@@ -67,6 +67,7 @@ const ServicesHeader = () => {
                 w={[`12.1rem`, `100%`]}
                 h={[`18.8rem`, `auto`]}
                 borderRadius={[`2rem`, `none`]}
+                mt={{lg:`8.9rem`}}
               />
             </Box>
 
@@ -81,7 +82,7 @@ const ServicesHeader = () => {
             </Box>
 
             <Box>
-              <Image src={line} alt={`A  shot straight`} margin={`2rem 0`} />
+              <Image src={line} alt={`A  shot straight`} margin={`2rem 0`} w={{base: `3.5rem`, lg:`7rem`}}/>
               <Heading
                 fontSize={[`1.8rem`, `3.2rem`]}
                 fontWeight={600}
@@ -117,7 +118,7 @@ const ServicesHeader = () => {
             </Box>
 
             <Box>
-              <Image src={line} alt={`A  shot straight`} margin={`2rem 0`} />
+              <Image src={line} alt={`A  shot straight`} margin={`2rem 0`} w={{base: `3.5rem`, lg:`7rem`}}/>
               <Heading
                 fontSize={[`1.8rem`, `3.2rem`]}
                 fontWeight={600}
@@ -173,7 +174,7 @@ const ServicesHeader = () => {
             </Box>
 
             <Box>
-              <Image src={line} alt={`A  shot straight`} margin={`2rem 0`} />
+              <Image src={line} alt={`A  shot straight`} margin={`2rem 0`} w={{base: `3.5rem`, lg:`7rem`}}/>
               <Heading
                 fontSize={[`1.8rem`, `3.2rem`]}
                 fontWeight={600}
@@ -209,7 +210,7 @@ const ServicesHeader = () => {
             </Box>
 
             <Box>
-              <Image src={line} alt={`A  shot straight`} margin={`2rem 0`} />
+              <Image src={line} alt={`A  shot straight`} margin={`2rem 0`} w={{base: `3.5rem`, lg:`7rem`}}/>
               <Heading
                 fontSize={[`1.8rem`, `3.2rem`]}
                 fontWeight={600}
@@ -266,7 +267,7 @@ const ServicesHeader = () => {
             </Box>
 
             <Box>
-              <Image src={line} alt={`A  shot straight`} margin={`2rem 0`} />
+              <Image src={line} alt={`A  shot straight`} margin={`2rem 0`} w={{base: `3.5rem`, lg:`7rem`}}/>
               <Heading
                 fontSize={[`1.8rem`, `3.2rem`]}
                 fontWeight={600}

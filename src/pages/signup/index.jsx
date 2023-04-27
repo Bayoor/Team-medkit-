@@ -13,7 +13,7 @@ import {
 import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/icons/logo.svg";
 import facebook from "../../assets/images/facebook.png";
 import gmail from "../../assets/images/gmail.png";
@@ -21,6 +21,9 @@ import linkedIn from "../../assets/images/linkedIn.png";
 import healthWorker from "../../assets/images/health-worker2.png";
 
 const SignUp = () => {
+ 
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -31,11 +34,13 @@ const SignUp = () => {
 
   const [isLoading, setIsLoading] = React.useState(false);
 
+  const baseUrl =  `https://medkit.onrender.com/signup`
+
   const handleSubmitForm = async (data) => {
     try {
       setIsLoading(true);
 
-      const res = await axios.post(`https://medkit.onrender.com/signup`, data);
+      const res = await axios.post(baseUrl, data);
       console.log(res);
       toast({
         title: "Successful",
@@ -45,7 +50,10 @@ const SignUp = () => {
         isClosable: true,
        
       });
-    } catch {
+      if(staus===200) {
+        nagivate(`/login`)
+      }
+    } catch(error) {
       toast({
         title: "Error!",
         description: " Email or Password not correct",
@@ -60,9 +68,11 @@ const SignUp = () => {
   };
 
   return (
-    <Flex
+    <Box  bgColor={`#def1f9`} p={{base: `1rem 2.5rem`, lg: `1rem 6rem`}}>
+
+<Flex
       justifyContent={`space-around`}
-      className="section__padding"
+      className={`cc-container`}
       bgColor={`#def1f9`}
       paddingTop={`5rem`}
       paddingBottom={`5rem`}
@@ -189,7 +199,7 @@ const SignUp = () => {
               // flexDir={`column`}
               justifyContent={`start`}
               alignItems={`flex-start`}
-              margin={"1rem   1rem"}
+              margin={"1rem ,  1rem"}
             >
               {errors?.fullname?.message}
             </Text>
@@ -350,7 +360,12 @@ const SignUp = () => {
         />
       </Box>
     </Flex>
-  );
+
+
+      </Box>
+
+
+     );
 };
 
 export default SignUp;

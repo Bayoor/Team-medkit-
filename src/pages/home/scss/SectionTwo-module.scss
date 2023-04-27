@@ -2,6 +2,8 @@
 
 .sectionTwo {
   background-color: #beecff;
+  padding-top: 11.6rem;
+  padding-bottom: 9.8rem;
 }
 
 .sectionTwo-content {
@@ -47,10 +49,11 @@
   line-height: 2.3rem;
   background: colors.$white;
   border: none;
-  padding: 1.5rem 2.5rem;
+  width: 19.7rem;
+  height: 6rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-bottom: 3rem;
+  margin-top: 3.4rem;
 }
 
 .sectionTwo-content-text button:hover {
@@ -76,7 +79,8 @@
 
 @media screen and (max-width: 600px) {
   .sectionTwo {
-    padding: 1rem 3rem;
+    padding: 1rem 2.5rem;
+    padding-bottom: 4.7rem;
   }
 
   .sectionTwo-content-text {
@@ -99,94 +103,10 @@
     background: #ffffff;
     border-radius: 2rem;
     font-size: 1.6rem;
-    line-height: 1.9rem;
-    padding: 0;
+    line-height: 1.875rem;
+    margin-top: 1.6rem;
 
     color: #1e3673;
   }
 }
 
-// .sectionTwo {
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: center;
-//   align-items: center;
-//   background-color: aquamarine;
-// }
-
-// .sectionTwo-content {
-//   @extend .sectionTwo;
-//   flex-wrap: wrap;
-//   flex-direction: row-reverse;
-//   gap: 2.5rem;
-// }
-
-// .sectionTwo-content-image {
-//   display: flex;
-//   flex: 1 290px;
-// }
-
-// .sectionTwo-content-image img {
-//   max-width: 100%;
-// }
-
-// .sectionTwo-content-text {
-//   flex: 2;
-//   outline: 1px dashed darkgoldenrod;
-// }
-
-// .sectionTwo-content-text h2 {
-//   font-weight: 600;
-//   font-size: 3.6rem;
-//   line-height: 49px;
-// }
-
-// .sectionTwo-content-text p {
-//   font-weight: 500;
-//   font-size: 2rem;
-//   line-height: 2.7rem;
-//   margin-top: 1rem;
-// }
-
-// .sectionTwo-content-text button {
-//   font-weight: 600;
-//   font-size: 2rem;
-//   line-height: 2.3rem;
-//   background: colors.$white;
-//   border-radius: 20px;
-//   width: 19.7rem;
-//   height: 6rem;
-//   margin: 2rem 0;
-// }
-
-// @media screen and (max-width: 76.8rem) {
-//   // .sectionTwo-content-image {
-
-//   // }
-
-//   .sectionTwo-content {
-//     width: 32.7rem;
-//   }
-
-//   .sectionTwo-content-text {
-//     display: flex;
-//     flex-flow: column wrap;
-//   }
-
-//   .sectionTwo-content-text h2 {
-//     font-size: 2.4rem;
-//     line-height: 136.69%;
-//   }
-
-//   .sectionTwo-content-text p {
-//     font-size: 1.2rem;
-//     line-height: 134.19%;
-//   }
-
-//   .sectionTwo-content-text button {
-//     width: 11.983rem;
-//     height: 3.9rem;
-//     font-size: 1.6rem;
-//     line-height: 1.9rem;
-//   }
-// }

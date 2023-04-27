@@ -48,7 +48,7 @@ const LogIn = () => {
       );
       if(response.data.token) {
         localStorage.setItem("token", response.data.token)
-        // localStorage.Item("token", response.data.token)
+        localStorage.getItem("token", response.data.token)
       }
       console.log(response);
       toast({
@@ -338,3 +338,17 @@ const LogIn = () => {
 };
 
 export default LogIn;
+
+
+// setIsLoading(true);
+// const response = await axios.post(
+//   `https://medkit.onrender.com/appointments`,
+//   data, {
+//     headers: { 
+//       "Content-Type": "application/json",
+//       'Authorization' :`Bearer ${token}`
+//     } ,
+//   }
+// );
+
+// const token = localStorage.getItem('token')

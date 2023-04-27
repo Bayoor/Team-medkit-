@@ -203,8 +203,8 @@ const ContactContent = () => {
             fontSize={[`2rem`, `3.2rem`]}
             fontWeight={700}
             lineHeight={[`2.684rem`, `4.294rem`]}
-            mt={{base: `1.8rem`}}
-            mb={{base: `1rem`}}
+            mt={{base: `-4.8rem`}}
+            mb={{base: `2rem`}}
            
           >
             Send us a message

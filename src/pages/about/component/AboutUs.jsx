@@ -30,31 +30,25 @@ const AboutUs = () => {
           justifyContent={{ lg: `space-evenly` }}
           alignItems={{ lg: `center` }}
           gap={{ base: `3.6rem`, lg: `0` }}
-          
         >
           <Box
             ml={{ base: `2rem`, lg: `10rem` }}
-            mt={{ lg: `16.9rem` }}
-            pt={{ base: `9rem`, lg: `0` }}
-            // h={{base: `20rem`}}
+            pt={{ base: `3.7rem`, lg: `11.9rem` }}
            
           >
             <img
               w={{ lg: `41.2rem` }}
-              h={{base: `100%`, lg: `53rem` }}
+              h={{ base: `100%`, lg: `53rem` }}
               src={HealthWorker}
               alt=""
-
-              style={{ 
-                height: '100%'
+              style={{
+                height: "100%",
               }}
-              // objectFit={{base:`cover`}}
             />
           </Box>
 
-          <Box mt={{ base: `7rem`, lg: `7.4rem` }}>
+          <Box mt={{ base: `2.5rem`, lg: `-4.4rem` }}>
             <Text
-              mb={{ lg: `1rem` }}
               fontSize={{ base: `1.2rem`, lg: `2.4rem` }}
               fontWeight={[300]}
               lineHeight={{ base: `1.61rem`, lg: `3.221rem` }}
@@ -62,7 +56,7 @@ const AboutUs = () => {
               About Us
             </Text>
             <Heading
-              mb={{ base: `1rem`, lg: `2rem` }}
+              mt={{ base: `.5rem`, lg: `1rem` }}
               mr={{ base: `3rem`, lg: `20.2rem` }}
               fontSize={{ base: `1.2rem`, md: `2.2rem`, lg: `3.2rem` }}
               fontWeight={[600]}
@@ -75,8 +69,9 @@ const AboutUs = () => {
               mr={{ lg: `14.7rem` }}
               fontSize={{ md: `1.2rem`, lg: `2rem` }}
               fontWeight={{ md: 500 }}
-              lineHeight={{ base: `1.61rem`, md: `2.2rem`, lg: `2.684rem` }}
+              lineHeight={{ md: `2.2rem`, lg: `2.684rem` }}
               display={{ base: `none`, md: `flex`, lg: `flex` }}
+              mt={{lg: `2rem`}}
             >
               Lorem ipsum dolor sit amet consectetur. Sed nec ornare vitae duis
               leo lacus pellentesque sit. Turpis amet ut tortor scelerisque
@@ -88,9 +83,12 @@ const AboutUs = () => {
 
             <Text
               display={{ base: `flex`, md: `none` }}
+              textAlign={`start`}
               fontSize={{ base: `1.2rem` }}
               fontWeight={{ base: 400 }}
               lineHeight={{ base: `1.61rem` }}
+              mr={{ base: `4.2rem` }}
+              mt={{ base: `1.1rem` }}
             >
               Lorem ipsum dolor sit amet consectetur. Sed nec ornare vitae.Morbi
               pellentesque ultricis id faucibus aliquam sed sit sed.
@@ -107,15 +105,16 @@ const AboutUs = () => {
               bgColor={[`#2f98c2`]}
               color={[`#fff`]}
               _hover={{ bg: `#1e3673` }}
-              mt={[`2rem`]}
-              mb={{ base: `2rem`, lg: `2.9rem` }}
+              mt={{ base: `1rem`, lg: `2rem` }}
+              // mb={{ base: `2rem`, lg: `2.9rem` }}
             >
               <Link to={`/404page`}> Learn More</Link>
             </Button>
             <Image
-              mb={{ base: `5rem`, md: `6.528rem` }}
+              mt={{ base: `1.5rem`, md: `2.9rem` }}
               src={line_1}
               alt={`A straight line`}
+              w={{base:`13.802rem`, lg: `58.802rem`}}
             />
           </Box>
         </Grid>
@@ -127,10 +126,10 @@ const AboutUs = () => {
           pos={{ lg: `relative` }}
         >
           <Box
-            ml={{ lg: `18.1rem` }}
+            // ml={{ lg: `18.1rem` }}
             pos={{ lg: `relative` }}
             top={{ lg: `-6rem` }}
-            left={{ lg: `6.2rem` }}
+            left={{ lg: `24.1rem` }}
             w={{ lg: `36.3rem` }}
             h={{ lg: `48.1rem` }}
             display={{ base: `none`, lg: `flex` }}
@@ -143,14 +142,13 @@ const AboutUs = () => {
             display={{ base: `block` }}
             // outline={{ base: `1px solid red` }}
             // w={{ base: `100%` }}
-            ml={{ base: `2rem`, md: `5rem`, lg: `0` }}
+            ml={{ base: `2.5rem`, md: `5rem`, lg: `0` }}
           >
             <Heading
               fontSize={{ base: `2rem`, lg: `3.2rem` }}
               fontWeight={[600]}
               lineHeight={{ base: `2.684rem`, lg: `4.294rem` }}
-              mt={[`4rem`, `4rem`, `4rem`, `-6.528rem`]}
-              mb={[`2rem`]}
+              mt={{ base: `2.5rem`, md: `4rem`, lg: `-9.528rem` }}
             >
               Why Patients Choose Our Hospital?
             </Heading>
@@ -163,7 +161,7 @@ const AboutUs = () => {
               fontSize={[`1.2rem`, `2rem`]}
               fontWeight={[400]}
               lineHeight={[`1.61rem`, `2.684rem`]}
-              mb={{ base: `2rem` }}
+              mt={{ base: `2rem`, lg: `2.5rem` }}
             >
               <Image
                 w={{ base: `2.5rem`, md: `5rem` }}
@@ -182,7 +180,7 @@ const AboutUs = () => {
               fontSize={[`1.2rem`, `2rem`]}
               fontWeight={[400]}
               lineHeight={[`1.61rem`, `2.684rem`]}
-              mb={{ base: `2rem` }}
+              mt={{ base: `1.7rem`, lg: `2rem` }}
             >
               <Image
                 w={[`2.5rem`, `5rem`]}
@@ -201,7 +199,7 @@ const AboutUs = () => {
               fontSize={[`1.2rem`, `2rem`]}
               fontWeight={[400]}
               lineHeight={[`1.61rem`, `2.684rem`]}
-              mb={{ base: `2rem` }}
+              mt={{ base: `1.7rem`, lg: `2rem` }}
             >
               <Image
                 w={[`2.5rem`, `5rem`]}
@@ -220,7 +218,8 @@ const AboutUs = () => {
               fontSize={[`1.2rem`, `2rem`]}
               fontWeight={[400]}
               lineHeight={[`1.61rem`, `2.684rem`]}
-              mb={{ base: `2rem` }}
+              mt={{ base: `1.7rem`, lg: `2rem` }}
+             
             >
               <Image
                 w={[`2.5rem`, `5rem`]}
@@ -239,7 +238,7 @@ const AboutUs = () => {
               fontSize={[`1.2rem`, `2rem`]}
               fontWeight={[400]}
               lineHeight={[`1.61rem`, `2.684rem`]}
-              mb={{ base: `2rem` }}
+              mt={{ base: `1.7rem`, lg: `2rem` }}
             >
               <Image
                 w={[`2.5rem`, `5rem`]}
@@ -258,7 +257,7 @@ const AboutUs = () => {
               fontSize={[`1.2rem`, `2rem`]}
               fontWeight={[400]}
               lineHeight={[`1.61rem`, `2.684rem`]}
-              mb={{ base: `2rem` }}
+              mt={{ base: `1.7rem`, lg: `2rem` }}
             >
               <Image
                 w={[`2.5rem`, `5rem`]}
@@ -277,7 +276,7 @@ const AboutUs = () => {
               fontSize={[`1.2rem`, `2rem`]}
               fontWeight={[400]}
               lineHeight={[`1.61rem`, `2.684rem`]}
-              mb={{ base: `2rem` }}
+              mt={{ base: `1.7rem`, lg: `2rem` }}
             >
               <Image
                 w={[`2.5rem`, `5rem`]}
@@ -299,7 +298,7 @@ const AboutUs = () => {
             `space-around`,
           ]}
           alignItems={[`center`]}
-          mb={[`6rem`]}
+          // mb={[`6rem`]}
           gap={{ md: `5.5rem` }}
         >
           <Box
@@ -308,15 +307,20 @@ const AboutUs = () => {
             justifyContent={`start`}
             alignItems={{ base: `center`, lg: `flex-start` }}
             w={{ base: `100%`, lg: `47%` }}
-            padding={{ base: `2rem`, md: `5rem`, lg: `0` }}
-            textAlign={{ base: `start` }}
+            padding={{ base: ` 0 2.5rem`, md: ` 0 5rem`, lg: `0` }}
+           mt={{base:`2.3rem`}}
+           
           >
-            <Heading m={[`2rem 0`]}>Our Story</Heading>
+            <Heading mt={{lg:`13.1rem`}} fontSize={{lg:`3.2rem`}} fontWeight={{lg:700}} lineHeight={{lg: `4.294rem`}}>Our Story</Heading>
             <Text
               fontSize={[`1.2rem`, `1.6rem`, `2rem`]}
-              fontWeight={[500]}
+              fontWeight={[700]}
               lineHeight={[`1.4rem`, `1.7rem`, `2.684rem`]}
               textAlign={{ base: `center`, md: `start`, lg: `start` }}
+              display={{ base: `none`, md: `flex` }}
+              mt={{md: `1.8rem`}}
+              mr={{lg:`1rem`}}
+             
             >
               Lorem ipsum dolor sit amet consectetur. Cras viverra vulputate
               scelerisque sem. Nullam lectus mauris malesuada rhoncus. Risus
@@ -329,14 +333,29 @@ const AboutUs = () => {
               sollicitudin viverra tempus a mi nibh aliquam nisl.
             </Text>
 
+            <Text
+              display={{ base: `flex`, md: `none` }}
+              fontSize={{base:`1.2rem`}}
+              fontWeight={[400]}
+              lineHeight={{base:`1.4rem`}}
+              textAlign={{ base: `center`}}
+              mt={{ base: `.7rem` }}
+            >
+              Lorem ipsum dolor sit amet consectetur. Cras viverra vulputate
+              scelerisque sem. Nullam lectus mauris malesuada rhoncus. Risus
+              quis penatibus sodales cursus. Velit massa dolor leo fermentia
+              amet sit mattis. Sit praesent imperdiet pretium enim ut bibendum
+              in dolor.
+            </Text>
+
             <Button
-              fontSize={[`2rem`]}
+              fontSize={{base:`1.2rem`,lg:`2rem`}}
               fontWeight={[600]}
-              lineHeight={[`2.344rem`]}
-              mt={[`2rem`]}
-              w={[`15.6rem`]}
-              h={[`6rem`]}
-              borderRadius={[`2rem`]}
+              lineHeight={{base: `1.406rem`, lg:`2.344rem`}}
+              mt={{base:`1.7rem`, lg:`4.5rem`}}
+              w={{base:`8.9rem`,lg:`15.6rem`}}
+              h={{base:`3.9rem`, lg:`6rem`}}
+              borderRadius={{base:`1.5rem`,lg:`2rem`}}
               color={[`#fff`]}
               bg={[`#2f98c2`]}
               _hover={{ bg: `#1e3673` }}
@@ -352,8 +371,7 @@ const AboutUs = () => {
             justifyContent={{ base: `space-around`, lg: `start` }}
             alignItems={[`center`, `flex-start`]}
             w={{ base: `100%`, lg: `30%` }}
-            gap={{ base: `7rem`, lg: `0` }}
-            padding={{ base: `0 2rem`, md: `3rem  5rem`, lg: `0` }}
+           
           >
             <Box
               display={`flex`}
@@ -361,18 +379,21 @@ const AboutUs = () => {
               justifyContent={`start`}
               alignItems={[`center`, `flex-start`]}
             >
-              <Heading m={{ base: `1rem 0`, md: `2rem 0` }}>Our Vision</Heading>
+              <Heading mt={{ base: `1.7rem `, md: `2rem 0` }} fontSize={{lg:`3.2rem`}} fontWeight={{lg:700}} lineHeight={{lg: `4.294rem`}}>Our Vision</Heading>
               <Image
-                mb={{ md: `1.6rem` }}
+                mt={{ md: `1.416rem` }}
                 src={line_3}
                 alt={`A straight line`}
                 display={{ base: `none`, md: `flex` }}
               />
               <Text
                 fontSize={[`1.2rem`, `1.6rem`, `2rem`]}
-                fontWeight={[500]}
-                lineHeight={[`2.684rem`]}
+                fontWeight={{base:`400`, lg:`700`}}
+                lineHeight={{base:`1.61rem`, lg: `2.684rem`}}
                 textAlign={[`center`, `start`]}
+                padding={{ base: `0  2.5rem`, md: `3rem  5rem`, lg: `0` }}
+                mt={{md:`1.984rem`}}
+
               >
                 Lorem ipsum dolor sit amet consectetur. Velit massa dolor leo
                 fermentia amet sit mattis. Sit praesent imperdiet pretium enim
@@ -386,18 +407,20 @@ const AboutUs = () => {
               justifyContent={[`center`, `start`]}
               alignItems={[`center`, `flex-start`]}
             >
-              <Heading m={{ base: `1rem 0`, md: `2rem 0` }}>Mission</Heading>
+              <Heading mt={{ base: `2.1rem `, md: `4.1rem ` }} fontSize={{lg:`3.2rem`}} fontWeight={{lg:700}} lineHeight={{lg: `4.294rem`}}>Mission</Heading>
               <Image
-                mb={{ md: `1.6rem` }}
+                mt={{ md: `1.8rem` }}
                 src={line_3}
                 alt={`A straight line`}
                 display={{ base: `none`, md: `flex` }}
               />
               <Text
                 fontSize={[`1.2rem`, `1.6rem`, `2rem`]}
-                fontWeight={[500]}
-                lineHeight={[`2.684rem`]}
+                fontWeight={{base:`400`, lg:`700`}}
+                lineHeight={{base:`1.61rem`, lg: `2.684rem`}}
+                padding={{ base: `0  2.5rem`, md: `3rem  5rem`, lg: `0` }}
                 textAlign={[`center`, `start`]}
+                mt={{lg:`2.4rem`}}
               >
                 Lorem ipsum dolor sit amet consectetur. Velit massa dolor leo
                 fermentia amet sit mattis. Sit praesent imperdiet pretium enim
@@ -407,30 +430,38 @@ const AboutUs = () => {
           </Box>
         </Flex>
 
-        <Flex
-          justifyContent={[`space-around`]}
-          alignItems={[`center`]}
-          pb={[`6rem`]}
+        <Grid
+       
+          display={`flex`}
+          justifyContent={`space-evenly`}
+           alignItems={`center`}
+          
         >
-          <Box display={[`none`, `none`, `none`, `block`]}>
-            <Image src={box} alt={`A container`} />
+        
+          <Box display={[`none`, `none`, `none`, `grid`]} mt={{lg: `21.2rem`}} gap={{lg: `7.3rem 8.4rem`}} mb={{lg: `15.6rem`}} gridTemplateColumns={`repeat(2, 1fr)`} justifyContent={`space-eventy`}
+          alignItems={`center`}>
+            <Image src={box} alt={`A container`}  />
             <Image src={box_1} alt={`A container`} />
-          </Box>
-
-          <Box display={[`none`, `none`, `none`, `block`]}>
             <Image src={box_2} alt={`A container`} />
             <Image src={box_3} alt={`A container`} />
           </Box>
 
-          <Box>
+          <Box  mt={{base:`2.5rem`}}  mb={{base:`2.5rem`}} m={{base:`2.5 auto`}}>
             <Image
               src={ellipse}
               alt={`A ellipse`}
               w={{ base: `22.4rem`, lg: `60rem` }}
               h={{ base: `22.4rem`, lg: `60rem` }}
+             
             />
           </Box>
-        </Flex>
+
+            </Grid>
+         
+ 
+          
+         
+        
       </Box>
     </Box>
   );

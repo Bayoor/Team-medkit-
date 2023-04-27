@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 
 const AppointmentNavbar = () => {
   return (
-    <nav className="AppointmentNavbar section__padding">
+      <div className="cc-container">
+         <nav className="AppointmentNavbar section__padding">
       <div className="AppointmentNavbar-content">
         <img className="AppointmentNavbar-logo" src={logo} alt="Logo" />
         <div className="AppointmentNavbar-text">
@@ -22,6 +23,9 @@ const AppointmentNavbar = () => {
         <li><Link to={`/`}>Log Out</Link></li>
       </ul>
     </nav>
+        
+      </div>
+   
   );
 };
 

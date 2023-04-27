@@ -8,16 +8,19 @@ import {
   Text,
   useToast,
 } from "@chakra-ui/react";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import AppointmentLayout from "../../layout/AppointmentLayout";
 import line from "../../assets/icons/line_1.svg";
 import Doc from "../../assets/images/doc3.png";
-import AppointmentModal from "../../components/Modals/AppointmentModal";
 
 const Appointment = () => {
+  const navigate = useNavigate();
+
+ const  baseUrl= `https://medkit.onrender.com/appointments`
+
   const {
     register,
     handleSubmit,
@@ -25,27 +28,35 @@ const Appointment = () => {
   } = useForm();
 
   const toast = useToast({ position: `top` });
+  const token = localStorage.getItem('token')
+
 
   const [isLoading, setIsLoading] = React.useState(false);
 
   const handleSubmitForm = async (data) => {
     try {
       setIsLoading(true);
-      const response = await axios.post(
-        `https://medkit.onrender.com/appointments`,
-        data
+      const response = await axios.post(baseUrl
+        ,
+        data,  {
+              headers: { 
+                "Content-Type": "application/json",
+                'Authorization' :`Bearer ${token}`
+              } ,
+            }
       );
       console.log(response);
       toast({
         title: "Successful",
         description: " Appointment Booked",
         status: "success",
-        duration: 1000,
+        duration: 9000,
         isClosable: true,
       });
-      // if (response.status === 200) {
-      //   navigate("/", { replace: true });
-      // }
+     
+      if (response.status === 200) {
+        navigate("/", { replace: true });
+      }
     } catch (error) {
       toast({
         title: "Error!",
@@ -87,7 +98,7 @@ const Appointment = () => {
 
   return (
     <AppointmentLayout>
-      <AppointmentModal  />
+      {/* <AppointmentModal isOpen={isModalOpen} onClose={handleCloseModal} /> */}
       <Flex
         justifyContent={`center`}
         alignItems={`center`}
@@ -293,9 +304,7 @@ const Appointment = () => {
                 bgColor={`#2f98c2`}
                 borderRadius={[`2rem`, `5rem`]}
                 type={`submit`}
-                // onClick={handleButtonClick}
                 isLoading={isLoading}
-                loadingText="Subscribing"
                 variant="outline"
                 _hover={{ bg: `#1e3542`, opacity: 1 }}
               >

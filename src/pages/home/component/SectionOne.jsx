@@ -31,11 +31,11 @@ const SectionOne = () => {
             <h2>Dr. Raj Spencer</h2>
             <span>Consultant</span>
             <button>
-              <Link to={`/appointment`}>Book Appointment</Link>
+              <Link to={`/signup`}>Book Appointment</Link>
             </button>
           </div>
-        </div>
       </div>
+        </div>
     </section>
   );
 };

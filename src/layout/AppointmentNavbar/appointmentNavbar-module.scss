@@ -12,6 +12,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-left: 4rem;
 }
 
 .AppointmentNavbar-logo {
@@ -39,6 +40,7 @@
   align-items: center;
   gap: 3rem;
   list-style: none;
+  margin-right: 4rem;
 }
 
 .AppointmentNavbar-links li {
@@ -79,4 +81,16 @@
     font-size: 1.2rem;
     line-height: 1.4rem;
   }
+
+  .AppointmentNavbar-links {
+ 
+ 
+  margin-right: 0rem;
+}
+
+.AppointmentNavbar-content {
+
+  margin-left: 0rem;
+}
+
 }
